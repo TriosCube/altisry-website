@@ -13,13 +13,13 @@
     </div>
 
     <!-- Stacking cards — each card is sticky with increasing top offset -->
-    <div class="relative" :style="{ paddingBottom: `${useCases.length * 20 + 80}px` }">
+    <div class="relative pt-4 md:pt-6" :style="{ paddingBottom: `${useCases.length * 18 + 72}px` }">
       <div
         v-for="(useCase, index) in useCases"
         :key="useCase.id"
-        class="sticky"
+        class="sticky pb-4 md:pb-6"
         :style="{
-          top: `${64 + index * 20}px`,
+          top: `${72 + index * 18}px`,
           zIndex: index + 1,
         }"
       >
@@ -28,7 +28,7 @@
           class="mx-3 md:mx-6 lg:mx-10 rounded-3xl overflow-hidden shadow-xl"
           :class="useCase.cardClass"
         >
-          <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 py-12 md:py-16 min-h-[calc(100vh-120px)] flex items-center">
+          <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 py-8 md:py-10 min-h-[72vh] flex items-center">
             <div
               class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 w-full"
               :class="index % 2 === 1 ? 'lg:flex-row-reverse' : ''"

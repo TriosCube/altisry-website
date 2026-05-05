@@ -2,43 +2,45 @@
   <header
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     :class="[
-      scrolled ? 'bg-white border-b border-gray-100 shadow-sm' : 'bg-transparent',
-      hidden ? '-translate-y-full' : 'translate-y-0',
+      scrolled || desktopMenuOpen ? 'bg-white border-b border-gray-100 shadow-sm' : 'bg-transparent',
+      hidden && !desktopMenuOpen ? '-translate-y-full' : 'translate-y-0',
     ]"
   >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[70]">
       <div class="flex items-center justify-between h-16 md:h-20">
 
         <!-- Logo — swap between light (white) and dark (blue) version -->
         <NuxtLink to="/" class="flex items-center flex-shrink-0">
           <img
-            v-if="!scrolled"
+            v-if="!scrolled && !desktopMenuOpen"
             src="~/assets/svg/logo_dark.svg"
             alt="Altisry"
-            class="h-7 md:h-8 w-auto"
+            class="h-9 md:h-10 w-auto"
           />
           <img
             v-else
             src="~/assets/svg/logo_light.svg"
             alt="Altisry"
-            class="h-7 md:h-8 w-auto"
+            class="h-9 md:h-10 w-auto"
           />
         </NuxtLink>
 
         <!-- Desktop Nav -->
-        <nav class="hidden lg:flex items-center gap-1">
+        <nav class="hidden lg:flex items-center gap-1" @mouseleave="scheduleClose">
           <div
             v-for="item in navItems"
             :key="item.label"
             class="relative"
-            @mouseenter="openMenu = item.label"
-            @mouseleave="openMenu = null"
+            @mouseenter="setOpenMenu(item.label)"
+            @mouseleave="scheduleClose"
           >
             <button
               class="flex items-center gap-1 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"
-              :class="scrolled
-                ? 'text-gray-700 hover:text-navy-900 hover:bg-gray-50'
-                : 'text-white/80 hover:text-white hover:bg-white/10'"
+              :class="desktopMenuOpen
+                ? 'text-navy-900 hover:text-black hover:bg-gray-100'
+                : scrolled
+                  ? 'text-gray-700 hover:text-navy-900 hover:bg-gray-50'
+                  : 'text-white/80 hover:text-white hover:bg-white/10'"
             >
               {{ item.label }}
               <svg
@@ -67,14 +69,18 @@
             >
               <div
                 v-if="openMenu === item.label"
-                class="absolute top-full pt-2"
-                :class="item.megaMenu ? '-left-4' : 'left-0'"
+                class="fixed inset-x-0 top-16 md:top-20 z-[60] bg-white border-b border-gray-100 shadow-2xl pb-5"
+                @mouseenter="clearCloseTimer"
+                @mouseleave="scheduleClose"
               >
                 <!-- Mega menu (Products) -->
                 <div
                   v-if="item.megaMenu"
-                  class="bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 w-[700px]"
+                  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
                 >
+                  <div class="border-b border-gray-100 pb-4 mb-5">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Explore {{ item.label }}</p>
+                  </div>
                   <div class="grid grid-cols-3 gap-x-6">
                     <div v-for="col in item.megaMenu" :key="col.category">
                       <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 px-2">
@@ -111,17 +117,44 @@
                 <!-- Simple dropdown -->
                 <div
                   v-else-if="item.children"
-                  class="bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 w-52"
+                  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
                 >
-                  <NuxtLink
-                    v-for="child in item.children"
-                    :key="child.label"
-                    :to="child.href"
-                    class="block px-4 py-2.5 text-sm font-medium text-navy-900 hover:text-brand-600 hover:bg-brand-50 transition-colors"
-                    @click="openMenu = null"
-                  >
-                    {{ child.label }}
-                  </NuxtLink>
+                  <div class="grid grid-cols-12 gap-8 items-stretch min-h-[260px]">
+                    <div class="col-span-8">
+                      <div class="border-b border-gray-100 pb-4 mb-4">
+                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">{{ item.label }}</p>
+                      </div>
+                      <NuxtLink
+                        v-for="child in item.children"
+                        :key="child.label"
+                        :to="child.href"
+                        class="block w-full px-5 py-3 text-sm font-semibold text-navy-900 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors"
+                        @click="openMenu = null"
+                      >
+                        {{ child.label }}
+                      </NuxtLink>
+                    </div>
+                    <div class="col-span-4 flex items-center">
+                      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                        <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2">
+                          Discover Altisry
+                        </p>
+                        <h4 class="text-base font-bold text-navy-900 leading-tight mb-2">
+                          See how Altisry makes open banking simple
+                        </h4>
+                        <p class="text-xs text-gray-600 leading-relaxed mb-3">
+                          Explore real customer outcomes and how teams launch faster with our platform.
+                        </p>
+                        <NuxtLink
+                          to="/company/success-stories"
+                          class="inline-flex items-center justify-center px-3.5 py-2 rounded-lg bg-brand-600 text-white text-xs font-semibold hover:bg-brand-500 transition-colors"
+                          @click="openMenu = null"
+                        >
+                          Read success stories
+                        </NuxtLink>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Transition>
@@ -133,7 +166,11 @@
           <a
             href="#"
             class="text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
-            :class="scrolled ? 'text-navy-900 hover:bg-gray-50' : 'text-white/80 hover:text-white hover:bg-white/10'"
+            :class="desktopMenuOpen
+              ? 'text-navy-900 hover:bg-gray-100'
+              : scrolled
+                ? 'text-navy-900 hover:bg-gray-50'
+                : 'text-white/80 hover:text-white hover:bg-white/10'"
           >
             Sign in
           </a>
@@ -207,13 +244,37 @@
 </template>
 
 <script setup lang="ts">
+import { computed, onMounted, onUnmounted, ref } from 'vue'
+
 const scrolled = ref(false)
 const hidden = ref(false)
 const openMenu = ref<string | null>(null)
 const mobileOpen = ref(false)
 const mobileSectionOpen = ref<string | null>(null)
+let closeTimer: ReturnType<typeof setTimeout> | null = null
 
 let lastY = 0
+const desktopMenuOpen = computed(() => openMenu.value !== null)
+
+function clearCloseTimer() {
+  if (closeTimer) {
+    clearTimeout(closeTimer)
+    closeTimer = null
+  }
+}
+
+function scheduleClose() {
+  clearCloseTimer()
+  closeTimer = setTimeout(() => {
+    openMenu.value = null
+  }, 160)
+}
+
+function setOpenMenu(label: string) {
+  clearCloseTimer()
+  hidden.value = false
+  openMenu.value = label
+}
 
 function toggleMobileSection(label: string) {
   mobileSectionOpen.value = mobileSectionOpen.value === label ? null : label
@@ -236,6 +297,10 @@ onMounted(() => {
 
   window.addEventListener('scroll', onScroll, { passive: true })
   onUnmounted(() => window.removeEventListener('scroll', onScroll))
+})
+
+onUnmounted(() => {
+  clearCloseTimer()
 })
 
 const navItems = [

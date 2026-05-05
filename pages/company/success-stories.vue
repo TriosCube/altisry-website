@@ -235,6 +235,52 @@
         </div>
       </section>
 
+      <!-- Customer spotlight -->
+      <section class="py-20 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <p class="section-label">Customer Spotlight</p>
+            <h2 class="section-title">Impact that compounds over time</h2>
+            <p class="section-subtitle mx-auto text-center mt-4">
+              Teams that adopt Altisry improve onboarding speed, payment conversion, and risk visibility in one platform.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              v-for="item in spotlight"
+              :key="item.title"
+              class="card hover:shadow-lg hover:border-brand-300 transition-all"
+            >
+              <p class="text-4xl font-black text-brand-600 mb-3">{{ item.value }}</p>
+              <p class="text-base font-bold text-navy-900 mb-2">{{ item.title }}</p>
+              <p class="text-sm text-gray-600 leading-relaxed">{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Delivery timeline -->
+      <section class="py-20 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <p class="section-label text-brand-300">How Teams Launch</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-white">A proven implementation path</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+            <div
+              v-for="step in launchPlan"
+              :key="step.title"
+              class="rounded-2xl border border-white/10 bg-white/5 p-6"
+            >
+              <p class="text-xs font-bold uppercase tracking-wider text-brand-300 mb-3">{{ step.phase }}</p>
+              <p class="text-lg font-bold text-white mb-2">{{ step.title }}</p>
+              <p class="text-sm text-white/60 leading-relaxed">{{ step.description }}</p>
+              <p class="text-xs text-white/40 mt-4">{{ step.timeline }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CtaBanner
         title="Ready to write your own success story?"
         subtitle="Join 300+ companies already building with Altisry's open banking platform."
@@ -245,6 +291,9 @@
 </template>
 
 <script setup lang="ts">
+import { computed, ref } from 'vue'
+import { useSeoMeta } from 'nuxt/app'
+
 useSeoMeta({
   title: 'Success Stories | Altisry',
   description: 'See how 300+ companies use Altisry to build the future of financial services.',
@@ -428,6 +477,51 @@ const testimonials = [
     role: 'CTO, PayNow',
     initials: 'RP',
     avatarBg: 'bg-purple-600',
+  },
+]
+
+const spotlight = [
+  {
+    value: '87%',
+    title: 'Faster onboarding',
+    description: 'Average reduction in onboarding cycle time after replacing manual bank statement collection.',
+  },
+  {
+    value: '2.3x',
+    title: 'Higher payment conversion',
+    description: 'Merchants that enable pay-by-bank consistently increase successful payment completion.',
+  },
+  {
+    value: '42%',
+    title: 'Lower fraud losses',
+    description: 'Customers combining aggregation and enrichment detect account anomalies earlier.',
+  },
+]
+
+const launchPlan = [
+  {
+    phase: 'Step 01',
+    title: 'Discovery',
+    description: 'Align on target markets, bank coverage, and regulatory requirements.',
+    timeline: 'Week 1',
+  },
+  {
+    phase: 'Step 02',
+    title: 'Integration',
+    description: 'Connect APIs, map data models, and configure environments with sandbox support.',
+    timeline: 'Week 2-3',
+  },
+  {
+    phase: 'Step 03',
+    title: 'Validation',
+    description: 'Run end-to-end payment, account, and risk scenarios before production launch.',
+    timeline: 'Week 4',
+  },
+  {
+    phase: 'Step 04',
+    title: 'Scale',
+    description: 'Expand to additional banks and countries with dedicated customer success guidance.',
+    timeline: 'Week 5+',
   },
 ]
 </script>

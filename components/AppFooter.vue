@@ -29,12 +29,8 @@
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-16">
         <!-- Brand column -->
         <div class="col-span-2 md:col-span-3 lg:col-span-1">
-          <NuxtLink to="/" class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
-              <span class="text-white font-black text-sm">A</span>
-            </div>
-            <span class="text-white font-bold text-xl tracking-tight">altisry</span>
-            <span class="text-brand-400 font-light text-sm">.co</span>
+          <NuxtLink to="/" class="inline-flex items-center mb-5">
+            <img src="~/assets/svg/logo_dark.svg" alt="Altisry" class="h-10 w-auto" />
           </NuxtLink>
           <p class="text-white/50 text-sm leading-relaxed mb-6">
             Global open banking and open finance platform powering tomorrow's financial services.
@@ -98,6 +94,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
 const email = ref('')
 
 function subscribeNewsletter() {
