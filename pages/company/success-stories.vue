@@ -3,7 +3,7 @@
     <AppHeader />
     <main>
       <!-- Hero -->
-      <section class="relative overflow-hidden bg-navy-900 pt-40 pb-20 md:pt-48 md:pb-24">
+      <section class="relative overflow-hidden bg-[#060809] pt-40 pb-20 md:pt-48 md:pb-24">
         <div class="absolute inset-0 opacity-10">
           <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -40,7 +40,7 @@
               @click="activeFilter = filter"
               class="flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold transition-all"
               :class="activeFilter === filter
-                ? 'bg-navy-900 text-white shadow-sm'
+                ? 'bg-[#060809] text-white shadow-sm'
                 : 'text-gray-600 hover:text-navy-900 hover:bg-gray-100'"
             >
               {{ filter }}
@@ -65,7 +65,7 @@
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p class="section-label mb-6">Featured</p>
-          <div class="bg-navy-900 rounded-3xl overflow-hidden">
+          <div class="bg-[#060809] rounded-3xl overflow-hidden">
             <div class="flex flex-col lg:flex-row">
               <!-- Content -->
               <div class="flex-1 p-10 md:p-14 flex flex-col justify-between">
@@ -260,7 +260,7 @@
       </section>
 
       <!-- Delivery timeline -->
-      <section class="py-20 bg-navy-900">
+      <section class="py-20 bg-[#060809]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
             <p class="section-label text-brand-300">How Teams Launch</p>

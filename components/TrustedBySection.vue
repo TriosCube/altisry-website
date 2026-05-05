@@ -1,9 +1,9 @@
 <template>
-  <section class="py-16 bg-brand-50 border-y border-brand-100">
+  <section class="py-16 bg-[#f2fdf1] border-y border-[#d9f9d4]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <p class="text-navy-900 font-semibold text-lg">
-          Trusted by <span class="text-brand-600 font-bold">300+</span> companies worldwide
+          Trusted by <span class="text-[#15c411] font-bold">300+</span> companies worldwide
         </p>
       </div>
 
@@ -19,8 +19,8 @@
           </div>
         </div>
         <!-- Fade edges -->
-        <div class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-brand-50 to-transparent pointer-events-none z-10"></div>
-        <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-brand-50 to-transparent pointer-events-none z-10"></div>
+        <div class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#f2fdf1] to-transparent pointer-events-none z-10"></div>
+        <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#f2fdf1] to-transparent pointer-events-none z-10"></div>
       </div>
     </div>
   </section>

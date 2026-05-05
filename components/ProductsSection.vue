@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 md:py-28 bg-brand-50">
+  <section class="py-20 md:py-28 bg-[#f2fdf1]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
         <!-- Left sticky header -->
@@ -25,7 +25,7 @@
           <div
             v-for="product in products"
             :key="product.title"
-            class="card group hover:border-brand-400 hover:shadow-md transition-all duration-200 cursor-pointer"
+            class="card group hover:border-[#52e147] hover:shadow-md transition-all duration-200 cursor-pointer"
           >
             <div
               class="w-11 h-11 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
@@ -39,7 +39,7 @@
             <p class="text-sm text-gray-600 leading-relaxed">{{ product.description }}</p>
             <NuxtLink
               :to="product.href"
-              class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-500 transition-colors"
+              class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#15c411] hover:text-[#13ad0f] transition-colors"
             >
               Learn more
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,8 +59,8 @@ const products = [
     title: 'Data Aggregation',
     description: 'Access thousands of banks globally through a single API. Real-time account data at your fingertips.',
     icon: 'M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4',
-    iconBg: 'bg-blue-100',
-    iconColor: 'text-blue-600',
+    iconBg: 'bg-[#ebfaeb]',
+    iconColor: 'text-[#15c411]',
     href: '/products/data-aggregation',
   },
   {
@@ -83,8 +83,8 @@ const products = [
     title: 'Open Banking Compliance',
     description: 'Full-stack PSD2/PSD3 compliance solution for banks and EMIs. Become compliant in 1 month.',
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
-    iconBg: 'bg-brand-100',
-    iconColor: 'text-brand-600',
+    iconBg: 'bg-[#ebfaeb]',
+    iconColor: 'text-[#15c411]',
     href: '/products/compliance',
   },
   {

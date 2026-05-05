@@ -1,12 +1,14 @@
 <template>
-  <footer class="bg-navy-950 text-white">
+  <footer class="relative overflow-hidden bg-[#060809] text-white">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#15c411] rounded-full opacity-20 blur-3xl -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-[#15c411] rounded-full opacity-10 blur-3xl translate-y-1/2"></div>
     <!-- Newsletter strip -->
-    <div class="border-b border-white/10">
+    <div class="relative border-b border-white/10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
             <h3 class="text-lg font-bold mb-1">Be the first to get Altisry updates</h3>
-            <p class="text-white/50 text-sm">
+            <p class="text-white/90 text-sm">
               Get expert insights, product updates, and industry trends — straight to your inbox.
             </p>
           </div>
@@ -16,7 +18,7 @@
               type="email"
               placeholder="your@company.com"
               required
-              class="flex-1 sm:w-64 px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition"
+              class="flex-1 sm:w-64 px-4 py-2.5 rounded-xl bg-white/10 border border-white/25 text-sm text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition"
             />
             <button type="submit" class="btn-primary whitespace-nowrap text-sm">Subscribe</button>
           </form>
@@ -25,14 +27,14 @@
     </div>
 
     <!-- Main footer -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-16">
         <!-- Brand column -->
         <div class="col-span-2 md:col-span-3 lg:col-span-1">
           <NuxtLink to="/" class="inline-flex items-center mb-5">
-            <img src="~/assets/svg/logo_dark.svg" alt="Altisry" class="h-10 w-auto" />
+            <img src="~/assets/svg/logo_light.svg" alt="Altisry" class="h-10 w-auto" />
           </NuxtLink>
-          <p class="text-white/50 text-sm leading-relaxed mb-6">
+          <p class="text-white/90 text-sm leading-relaxed mb-6">
             Global open banking and open finance platform powering tomorrow's financial services.
           </p>
           <div class="flex items-center gap-3">
@@ -42,7 +44,7 @@
               :href="social.href"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-8 h-8 rounded-lg bg-white/10 hover:bg-brand-600 flex items-center justify-center transition-colors"
+              class="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#15c411] flex items-center justify-center transition-colors"
               :aria-label="social.label"
             >
               <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -59,7 +61,7 @@
             <li v-for="link in col.links" :key="link.label">
               <NuxtLink
                 :to="link.href"
-                class="text-sm text-white/50 hover:text-white transition-colors leading-relaxed"
+                class="text-sm text-white/90 hover:text-white transition-colors leading-relaxed"
               >
                 {{ link.label }}
               </NuxtLink>
@@ -71,19 +73,19 @@
       <!-- Bottom bar -->
       <div class="border-t border-white/10 pt-8">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <p class="text-white/40 text-xs">© 2026, Altisry Inc. All rights reserved.</p>
+          <p class="text-white/90 text-xs">© 2026, Altisry Inc. All rights reserved.</p>
           <div class="flex items-center flex-wrap gap-4">
             <NuxtLink
               v-for="link in legalLinks"
               :key="link.label"
               :to="link.href"
-              class="text-xs text-white/40 hover:text-white/70 transition-colors"
+              class="text-xs text-white/90 hover:text-white transition-colors"
             >
               {{ link.label }}
             </NuxtLink>
           </div>
         </div>
-        <p class="text-white/25 text-xs mt-4 leading-relaxed max-w-3xl">
+        <p class="text-white/80 text-xs mt-4 leading-relaxed max-w-3xl">
           Altisry Limited, registered in England and Wales, is authorized by the FCA. All logos, trademarks, and brand
           names used on this website that are not owned by Altisry Inc. are the property of their respective owners and
           are used for identification purposes only.

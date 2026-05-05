@@ -25,9 +25,17 @@
       >
         <!-- Card -->
         <div
-          class="mx-3 md:mx-6 lg:mx-10 rounded-3xl overflow-hidden shadow-xl"
+          class="relative mx-3 md:mx-6 lg:mx-10 rounded-3xl overflow-hidden shadow-xl"
           :class="useCase.cardClass"
         >
+          <div
+            v-if="useCase.hasFlare"
+            class="absolute top-0 left-1/4 w-96 h-96 bg-[#15c411] rounded-full opacity-20 blur-3xl -translate-y-1/2"
+          />
+          <div
+            v-if="useCase.hasFlare"
+            class="absolute bottom-0 right-1/4 w-80 h-80 bg-[#15c411] rounded-full opacity-10 blur-3xl translate-y-1/2"
+          />
           <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 py-8 md:py-10 min-h-[72vh] flex items-center">
             <div
               class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 w-full"
@@ -132,14 +140,15 @@ const useCases = [
       'Global expansion with compliance built in',
     ],
     href: '/use-cases/ecommerce',
-    cardClass: 'bg-navy-900',
+    cardClass: 'bg-[#060809]',
     tagClass: 'bg-white/10 text-white/80 border-white/20',
     titleClass: 'text-white',
-    subtitleClass: 'text-brand-400',
-    descClass: 'text-white/60',
+    subtitleClass: 'text-[#52e147]',
+    descClass: 'text-white',
     featureClass: 'text-white/80',
-    checkClass: 'text-brand-400',
-    btnClass: 'bg-white text-navy-900 hover:bg-brand-100',
+    checkClass: 'text-[#52e147]',
+    btnClass: 'bg-white text-navy-900 hover:bg-[#ebfaeb]',
+    hasFlare: true,
     visual: EcommerceVisual,
   },
   {
@@ -156,14 +165,15 @@ const useCases = [
       'Allow frictionless Payment Initiation (PIS)',
     ],
     href: '/use-cases/banking',
-    cardClass: 'bg-brand-600',
-    tagClass: 'bg-white/15 text-white/90 border-white/25',
-    titleClass: 'text-white',
-    subtitleClass: 'text-yellow-300',
-    descClass: 'text-white/65',
-    featureClass: 'text-white/85',
-    checkClass: 'text-yellow-300',
-    btnClass: 'bg-white text-brand-600 hover:bg-brand-50',
+    cardClass: 'bg-gradient-to-r from-[#eafbe8] to-[#f8fff7]',
+    tagClass: 'bg-[#e4f9e2] text-[#246b24] border-[#c9efc4]',
+    titleClass: 'text-[#132013]',
+    subtitleClass: 'text-[#132013]',
+    descClass: 'text-[#2f3f2f]',
+    featureClass: 'text-[#213121]',
+    checkClass: 'text-[#15c411]',
+    btnClass: 'bg-[#15c411] text-white hover:bg-[#13ad0f]',
+    hasFlare: false,
     visual: BankingVisual,
   },
   {
@@ -180,14 +190,15 @@ const useCases = [
       'Boost your credit decision from days to minutes',
     ],
     href: '/use-cases/lending',
-    cardClass: 'bg-slate-900',
+    cardClass: 'bg-[#060809]',
     tagClass: 'bg-green-400/20 text-green-300 border-green-400/30',
     titleClass: 'text-white',
     subtitleClass: 'text-green-400',
-    descClass: 'text-white/60',
+    descClass: 'text-white',
     featureClass: 'text-white/80',
     checkClass: 'text-green-400',
     btnClass: 'bg-green-500 text-white hover:bg-green-400',
+    hasFlare: true,
     visual: LendingVisual,
   },
   {
@@ -204,14 +215,15 @@ const useCases = [
       'Automated account ownership verification',
     ],
     href: '/use-cases/automotive',
-    cardClass: 'bg-navy-800',
-    tagClass: 'bg-orange-400/20 text-orange-300 border-orange-400/30',
-    titleClass: 'text-white',
-    subtitleClass: 'text-orange-400',
-    descClass: 'text-white/60',
-    featureClass: 'text-white/80',
-    checkClass: 'text-orange-400',
-    btnClass: 'bg-orange-500 text-white hover:bg-orange-400',
+    cardClass: 'bg-gradient-to-r from-[#eafbe8] to-[#f8fff7]',
+    tagClass: 'bg-[#e4f9e2] text-[#246b24] border-[#c9efc4]',
+    titleClass: 'text-[#132013]',
+    subtitleClass: 'text-[#132013]',
+    descClass: 'text-[#2f3f2f]',
+    featureClass: 'text-[#213121]',
+    checkClass: 'text-[#15c411]',
+    btnClass: 'bg-[#15c411] text-white hover:bg-[#13ad0f]',
+    hasFlare: false,
     visual: AutomotiveVisual,
   },
   {
@@ -228,14 +240,15 @@ const useCases = [
       'Multi-Entity Treasury Management',
     ],
     href: '/use-cases/treasury',
-    cardClass: 'bg-brand-500',
+    cardClass: 'bg-[#060809]',
     tagClass: 'bg-white/10 text-white/80 border-white/20',
     titleClass: 'text-white',
-    subtitleClass: 'text-white/90',
-    descClass: 'text-white/60',
+    subtitleClass: 'text-white',
+    descClass: 'text-white',
     featureClass: 'text-white/80',
     checkClass: 'text-white',
-    btnClass: 'bg-white text-brand-600 hover:bg-brand-50',
+    btnClass: 'bg-white text-[#15c411] hover:bg-[#ebfaeb]',
+    hasFlare: true,
     visual: TreasuryVisual,
   },
 ]

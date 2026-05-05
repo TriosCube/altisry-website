@@ -3,7 +3,7 @@
     <AppHeader />
     <main>
       <!-- Hero -->
-      <section class="relative overflow-hidden bg-navy-900 pt-40 pb-24 md:pt-48 md:pb-32">
+      <section class="relative overflow-hidden bg-[#060809] pt-40 pb-24 md:pt-48 md:pb-32">
         <div class="absolute inset-0 opacity-10">
           <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -156,7 +156,7 @@
               </div>
 
               <!-- Results summary card -->
-              <div class="bg-navy-900 rounded-2xl p-6">
+              <div class="bg-[#060809] rounded-2xl p-6">
                 <h3 class="text-sm font-bold text-white/50 uppercase tracking-wider mb-5">Key Results</h3>
                 <div class="space-y-4">
                   <div v-for="stat in story.stats" :key="stat.label" class="flex items-center justify-between border-b border-white/10 pb-4 last:border-0 last:pb-0">

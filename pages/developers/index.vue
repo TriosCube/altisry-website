@@ -40,7 +40,7 @@
                 </button>
               </div>
             </div>
-            <div class="flex-1 bg-navy-950 rounded-2xl overflow-hidden">
+            <div class="flex-1 bg-[#060809] rounded-2xl overflow-hidden">
               <div class="flex items-center gap-2 px-5 py-3 border-b border-white/10">
                 <div class="w-3 h-3 rounded-full bg-red-500"></div>
                 <div class="w-3 h-3 rounded-full bg-yellow-500"></div>

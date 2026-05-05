@@ -1,4 +1,4 @@
-import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { defineComponent, ref, computed, mergeProps, withCtx, openBlock, createBlock, createVNode, toDisplayString, createCommentVNode, createTextVNode, hasInjectionContext, inject, shallowRef, h, resolveComponent, getCurrentInstance, unref, defineAsyncComponent, Suspense, Fragment, useSSRContext, createApp, provide, shallowReactive, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, reactive, effectScope, getCurrentScope, toRef, isReadonly, isRef, isShallow, isReactive, toRaw } from 'vue';
+import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { defineComponent, ref, computed, mergeProps, withCtx, createVNode, openBlock, createBlock, toDisplayString, createCommentVNode, createTextVNode, hasInjectionContext, inject, shallowRef, h, resolveComponent, getCurrentInstance, unref, defineAsyncComponent, Suspense, Fragment, createElementBlock, provide, cloneVNode, useSSRContext, createApp, shallowReactive, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, reactive, effectScope, getCurrentScope, toRef, isReadonly, isRef, isShallow, isReactive, toRaw } from 'vue';
 import { f as createError$1, k as klona, l as parseQuery, m as defuFn, n as hasProtocol, j as joinURL, o as parseURL, e as encodePath, q as decodePath, r as getContext, w as withQuery, s as isScriptProtocol, t as withTrailingSlash, v as withoutTrailingSlash, x as sanitizeStatusCode, $ as $fetch$1, y as baseURL, z as createHooks, A as executeAsync, B as defu } from '../nitro/nitro.mjs';
 import { RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import { _api, addAPIProvider, setCustomIconsLoader } from '@iconify/vue';
@@ -411,111 +411,148 @@ function getRouteRules(arg) {
 }
 const _routes = [
   {
+    name: "blog",
+    path: "/blog",
+    component: () => import('./blog-4BR8CNLs.mjs'),
+    children: [
+      {
+        name: "blog-slug",
+        path: ":slug()",
+        component: () => import('./_slug_-ByzmgFnM.mjs')
+      }
+    ]
+  },
+  {
     name: "index",
     path: "/",
-    component: () => import('./index-ocTCgZd3.mjs')
+    component: () => import('./index-FPAExnZz.mjs')
+  },
+  {
+    name: "status",
+    path: "/status",
+    component: () => import('./status-BhehBlmR.mjs')
   },
   {
     name: "contact",
     path: "/contact",
-    component: () => import('./contact-DhP-kYqB.mjs')
+    component: () => import('./contact-CLPALvdH.mjs')
   },
   {
     name: "get-started",
     path: "/get-started",
-    component: () => import('./get-started-y9PGfXD_.mjs')
+    component: () => import('./get-started-Bdg4Ubvw.mjs')
   },
   {
     name: "products-aml",
     path: "/products/aml",
-    component: () => import('./aml-CBMKYKI5.mjs')
+    component: () => import('./aml-DzEBHVnq.mjs')
   },
   {
     name: "company-about",
     path: "/company/about",
-    component: () => import('./about-DdjcwObr.mjs')
+    component: () => import('./about-C6TQ_l-T.mjs')
+  },
+  {
+    name: "developers-api",
+    path: "/developers/api",
+    component: () => import('./api-DwiX2c9o.mjs')
   },
   {
     name: "company-careers",
     path: "/company/careers",
-    component: () => import('./careers-CPZ-bCpZ.mjs')
+    component: () => import('./careers-CsoeUTw7.mjs')
+  },
+  {
+    name: "developers-docs",
+    path: "/developers/docs",
+    component: () => import('./docs-Bw8b0gZW.mjs')
   },
   {
     name: "company-security",
     path: "/company/security",
-    component: () => import('./security-BRILTg7V.mjs')
+    component: () => import('./security-CBGjh88q.mjs')
   },
   {
     name: "developers",
     path: "/developers",
-    component: () => import('./index-Bo25VlfZ.mjs')
+    component: () => import('./index-BG1iKz-B.mjs')
   },
   {
     name: "use-cases-banking",
     path: "/use-cases/banking",
-    component: () => import('./banking-CxjBtuMv.mjs')
+    component: () => import('./banking-Bc4hRFNu.mjs')
   },
   {
     name: "use-cases-lending",
     path: "/use-cases/lending",
-    component: () => import('./lending-W-9fJfL8.mjs')
+    component: () => import('./lending-CRLTMrlF.mjs')
+  },
+  {
+    name: "developers-sandbox",
+    path: "/developers/sandbox",
+    component: () => import('./sandbox-D9PVXvpX.mjs')
   },
   {
     name: "use-cases-treasury",
     path: "/use-cases/treasury",
-    component: () => import('./treasury-Dlrivst6.mjs')
+    component: () => import('./treasury-CdbLQPhb.mjs')
   },
   {
     name: "products-compliance",
     path: "/products/compliance",
-    component: () => import('./compliance-y83812pC.mjs')
+    component: () => import('./compliance-B4CafSMH.mjs')
   },
   {
     name: "products-mobile-sca",
     path: "/products/mobile-sca",
-    component: () => import('./mobile-sca-DlmDDB8i.mjs')
+    component: () => import('./mobile-sca-CsnSqVB4.mjs')
   },
   {
     name: "use-cases-ecommerce",
     path: "/use-cases/ecommerce",
-    component: () => import('./ecommerce-8NGHdcN-.mjs')
+    component: () => import('./ecommerce-DWqpyE_l.mjs')
   },
   {
     name: "company-partnerships",
     path: "/company/partnerships",
-    component: () => import('./partnerships-BPLvQcOL.mjs')
+    component: () => import('./partnerships-Bf8PUL7C.mjs')
   },
   {
     name: "products-pay-by-bank",
     path: "/products/pay-by-bank",
-    component: () => import('./pay-by-bank-NQ-em6Yj.mjs')
+    component: () => import('./pay-by-bank-Hq54VF7b.mjs')
   },
   {
     name: "use-cases-automotive",
     path: "/use-cases/automotive",
-    component: () => import('./automotive-T6hPqFeu.mjs')
+    component: () => import('./automotive-CtM9UDBX.mjs')
+  },
+  {
+    name: "products-bulk-payments",
+    path: "/products/bulk-payments",
+    component: () => import('./bulk-payments-C5nMYDVu.mjs')
   },
   {
     name: "company-success-stories",
     path: "/company/success-stories",
-    component: () => import('./success-stories-0Q9h4e4L.mjs'),
+    component: () => import('./success-stories-CvW1K8yb.mjs'),
     children: [
       {
         name: "company-success-stories-slug",
         path: ":slug()",
-        component: () => import('./_slug_-DfYIKtsp.mjs')
+        component: () => import('./_slug_-B7y0XRH5.mjs')
       }
     ]
   },
   {
     name: "products-data-enrichment",
     path: "/products/data-enrichment",
-    component: () => import('./data-enrichment-DythPkHP.mjs')
+    component: () => import('./data-enrichment-DVldr1hy.mjs')
   },
   {
     name: "products-data-aggregation",
     path: "/products/data-aggregation",
-    component: () => import('./data-aggregation-peINlAcZ.mjs')
+    component: () => import('./data-aggregation-CKIn64j7.mjs')
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
@@ -886,7 +923,7 @@ const revive_payload_server_MVtmlZaQpj6ApFmshWfUWl5PehCebzaBf2NuRMiIbms = /* @__
     }
   }
 });
-const LazyIcon = defineAsyncComponent(() => import('./index-AjrjrXjK.mjs').then((r) => r["default"] || r.default || r));
+const LazyIcon = defineAsyncComponent(() => import('./index-CafbjuIA.mjs').then((r) => r["default"] || r.default || r));
 const lazyGlobalComponents = [
   ["Icon", LazyIcon]
 ];
@@ -1538,8 +1575,44 @@ function applyTrailingSlashBehavior(to, trailingSlash) {
   }
   return normalizeFn(to, true);
 }
-const _imports_0 = "" + __buildAssetsURL("logo_dark.Crwm5y25.svg");
-const _imports_1 = "" + __buildAssetsURL("logo_light.BSURyhA8.svg");
+const _imports_0 = "" + __buildAssetsURL("logo_light.BUyNMo-i.svg");
+defineComponent({
+  name: "ServerPlaceholder",
+  render() {
+    return createElementBlock("div");
+  }
+});
+const clientOnlySymbol = /* @__PURE__ */ Symbol.for("nuxt:client-only");
+defineComponent({
+  name: "ClientOnly",
+  inheritAttrs: false,
+  props: ["fallback", "placeholder", "placeholderTag", "fallbackTag"],
+  ...false,
+  setup(props, { slots, attrs }) {
+    const mounted = shallowRef(false);
+    const vm = getCurrentInstance();
+    if (vm) {
+      vm._nuxtClientOnly = true;
+    }
+    provide(clientOnlySymbol, true);
+    return () => {
+      if (mounted.value) {
+        const vnodes = slots.default?.();
+        if (vnodes && vnodes.length === 1) {
+          return [cloneVNode(vnodes[0], attrs)];
+        }
+        return vnodes;
+      }
+      const slot = slots.fallback || slots.placeholder;
+      if (slot) {
+        return h(slot);
+      }
+      const fallbackStr = props.fallback || props.placeholder || "";
+      const fallbackTag = props.fallbackTag || props.placeholderTag || "span";
+      return createElementBlock(fallbackTag, attrs, fallbackStr);
+    };
+  }
+});
 const _sfc_main$3 = /* @__PURE__ */ defineComponent({
   __name: "AppHeader",
   __ssrInlineRender: true,
@@ -1550,6 +1623,10 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
     const mobileOpen = ref(false);
     const mobileSectionOpen = ref(null);
     const desktopMenuOpen = computed(() => openMenu.value !== null);
+    const route = useRoute();
+    const isHomePage = computed(() => route.path === "/");
+    const headerOnWhite = computed(() => desktopMenuOpen.value);
+    const darkHeader = computed(() => !desktopMenuOpen.value && (!isHomePage.value || scrolled.value));
     const navItems = [
       {
         label: "Products",
@@ -1575,7 +1652,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
             category: "Payments",
             items: [
               { label: "Pay by Bank", desc: "Pay with any bank from Europe & UK", href: "/products/pay-by-bank", icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" },
-              { label: "Bulk Payments", desc: "Pay multiple recipients at once", href: "/products/pay-by-bank", badge: "New", icon: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" },
+              { label: "Bulk Payments", desc: "Pay multiple recipients at once", href: "/products/bulk-payments", badge: "New", icon: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" },
               { label: "AML Monitoring", desc: "Identify and act on suspicious activity", href: "/products/aml", badge: "New", icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" }
             ]
           }
@@ -1596,17 +1673,19 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
         children: [
           { label: "About Us", href: "/company/about" },
           { label: "Success Stories", href: "/company/success-stories" },
+          { label: "Blog", href: "/blog" },
           { label: "Partnerships", href: "/company/partnerships" },
           { label: "Careers", href: "/company/careers" },
-          { label: "Security", href: "/company/security" }
+          { label: "Security", href: "/company/security" },
+          { label: "Service Status", href: "/status" }
         ]
       },
       {
         label: "Developers",
         children: [
-          { label: "Documentation", href: "/developers" },
-          { label: "API Reference", href: "/developers" },
-          { label: "Sandbox", href: "/developers" }
+          { label: "Documentation", href: "/developers/docs" },
+          { label: "API Reference", href: "/developers/api" },
+          { label: "Sandbox", href: "/developers/sandbox" }
         ]
       }
     ];
@@ -1614,34 +1693,30 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
       const _component_NuxtLink = __nuxt_component_2;
       _push(`<header${ssrRenderAttrs(mergeProps({
         class: ["fixed top-0 left-0 right-0 z-50 transition-all duration-300", [
-          scrolled.value || desktopMenuOpen.value ? "bg-white border-b border-gray-100 shadow-sm" : "bg-transparent",
-          hidden.value ? "-translate-y-full" : "translate-y-0"
+          headerOnWhite.value ? "bg-white border-b border-gray-100 shadow-sm" : darkHeader.value ? "bg-[#060809] border-b border-white/10 shadow-sm" : "bg-transparent",
+          hidden.value && !desktopMenuOpen.value ? "-translate-y-full" : "translate-y-0"
         ]]
-      }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16 md:h-20">`);
+      }, _attrs))}>`);
+      if (darkHeader.value) {
+        _push(`<div class="pointer-events-none absolute inset-0"><div class="absolute -top-16 left-1/4 w-72 h-72 bg-[#15c411] rounded-full opacity-15 blur-3xl"></div><div class="absolute -bottom-20 right-1/4 w-64 h-64 bg-[#15c411] rounded-full opacity-10 blur-3xl"></div></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[70]"><div class="flex items-center justify-between h-16 md:h-20">`);
       _push(ssrRenderComponent(_component_NuxtLink, {
         to: "/",
         class: "flex items-center flex-shrink-0"
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            if (!scrolled.value && !desktopMenuOpen.value) {
-              _push2(`<img${ssrRenderAttr("src", _imports_0)} alt="Altisry" class="h-9 md:h-10 w-auto"${_scopeId}>`);
-            } else {
-              _push2(`<img${ssrRenderAttr("src", _imports_1)} alt="Altisry" class="h-9 md:h-10 w-auto"${_scopeId}>`);
-            }
+            _push2(`<img${ssrRenderAttr("src", _imports_0)} alt="Altisry" class="h-9 md:h-10 w-auto"${_scopeId}>`);
           } else {
             return [
-              !scrolled.value && !desktopMenuOpen.value ? (openBlock(), createBlock("img", {
-                key: 0,
+              createVNode("img", {
                 src: _imports_0,
                 alt: "Altisry",
                 class: "h-9 md:h-10 w-auto"
-              })) : (openBlock(), createBlock("img", {
-                key: 1,
-                src: _imports_1,
-                alt: "Altisry",
-                class: "h-9 md:h-10 w-auto"
-              }))
+              })
             ];
           }
         }),
@@ -1649,39 +1724,39 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
       }, _parent));
       _push(`<nav class="hidden lg:flex items-center gap-1"><!--[-->`);
       ssrRenderList(navItems, (item) => {
-        _push(`<div class="relative"><button class="${ssrRenderClass([scrolled.value || desktopMenuOpen.value ? "text-gray-700 hover:text-navy-900 hover:bg-gray-50" : "text-white/80 hover:text-white hover:bg-white/10", "flex items-center gap-1 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"])}">${ssrInterpolate(item.label)} <svg class="${ssrRenderClass([openMenu.value === item.label ? "rotate-180" : "", "w-3.5 h-3.5 opacity-60 transition-transform duration-200"])}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></button>`);
+        _push(`<div class="relative"><button class="${ssrRenderClass([headerOnWhite.value ? "text-navy-900 hover:text-black hover:bg-gray-100" : "text-white hover:text-white hover:bg-white/10", "flex items-center gap-1 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"])}">${ssrInterpolate(item.label)} <svg class="${ssrRenderClass([openMenu.value === item.label ? "rotate-180" : "", "w-3.5 h-3.5 opacity-60 transition-transform duration-200"])}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg></button>`);
         if (openMenu.value === item.label) {
-          _push(`<div class="absolute bottom-0 left-4 right-4 h-0.5 bg-brand-600 rounded-full"></div>`);
+          _push(`<div class="absolute bottom-0 left-4 right-4 h-0.5 bg-[#15c411] rounded-full"></div>`);
         } else {
           _push(`<!---->`);
         }
         if (openMenu.value === item.label) {
-          _push(`<div class="fixed inset-x-0 top-0 bg-white border-b border-gray-100 shadow-2xl pt-16 md:pt-20 pb-5">`);
+          _push(`<div class="fixed inset-x-0 top-16 md:top-20 z-[60] bg-white border-b border-gray-100 shadow-2xl pb-5">`);
           if (item.megaMenu) {
-            _push(`<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between border-b border-gray-100 pb-4 mb-5"><p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Explore ${ssrInterpolate(item.label)}</p><img${ssrRenderAttr("src", _imports_1)} alt="Altisry" class="h-7 w-auto"></div><div class="grid grid-cols-3 gap-x-6"><!--[-->`);
+            _push(`<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="border-b border-gray-100 pt-2 pb-4 mb-5"><p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Explore ${ssrInterpolate(item.label)}</p></div><div class="grid grid-cols-3 gap-x-6"><!--[-->`);
             ssrRenderList(item.megaMenu, (col) => {
               _push(`<div><p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 px-2">${ssrInterpolate(col.category)}</p><!--[-->`);
               ssrRenderList(col.items, (product) => {
                 _push(ssrRenderComponent(_component_NuxtLink, {
                   key: product.label,
                   to: product.href,
-                  class: "flex items-start gap-3 px-2 py-2.5 rounded-xl hover:bg-brand-50 transition-colors group/item",
+                  class: "flex items-start gap-3 px-2 py-2.5 rounded-xl hover:bg-[#ebfaeb] transition-colors group/item",
                   onClick: ($event) => openMenu.value = null
                 }, {
                   default: withCtx((_, _push2, _parent2, _scopeId) => {
                     if (_push2) {
-                      _push2(`<div class="w-8 h-8 rounded-lg border border-gray-200 bg-white flex items-center justify-center flex-shrink-0 group-hover/item:border-brand-300 group-hover/item:bg-brand-50 transition-colors mt-0.5"${_scopeId}><svg class="w-[15px] h-[15px] text-gray-500 group-hover/item:text-brand-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"${ssrRenderAttr("d", product.icon)}${_scopeId}></path></svg></div><div class="min-w-0"${_scopeId}><div class="flex items-center gap-1.5 flex-wrap"${_scopeId}><p class="text-sm font-semibold text-navy-900 group-hover/item:text-brand-600 transition-colors leading-tight"${_scopeId}>${ssrInterpolate(product.label)}</p>`);
+                      _push2(`<div class="w-8 h-8 rounded-lg border border-gray-200 bg-white flex items-center justify-center flex-shrink-0 group-hover/item:border-[#52e147] group-hover/item:bg-[#ebfaeb] transition-colors mt-0.5"${_scopeId}><svg class="w-[15px] h-[15px] text-gray-500 group-hover/item:text-[#15c411] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"${ssrRenderAttr("d", product.icon)}${_scopeId}></path></svg></div><div class="min-w-0"${_scopeId}><div class="flex items-center gap-1.5 flex-wrap"${_scopeId}><p class="text-sm font-semibold text-navy-900 group-hover/item:text-[#15c411] transition-colors leading-tight"${_scopeId}>${ssrInterpolate(product.label)}</p>`);
                       if (product.badge) {
-                        _push2(`<span class="text-[9px] font-bold bg-brand-100 text-brand-600 px-1.5 py-0.5 rounded-full leading-none uppercase tracking-wide"${_scopeId}>${ssrInterpolate(product.badge)}</span>`);
+                        _push2(`<span class="text-[9px] font-bold bg-[#ebfaeb] text-[#15c411] px-1.5 py-0.5 rounded-full leading-none uppercase tracking-wide"${_scopeId}>${ssrInterpolate(product.badge)}</span>`);
                       } else {
                         _push2(`<!---->`);
                       }
                       _push2(`</div><p class="text-xs text-gray-400 mt-0.5 leading-tight"${_scopeId}>${ssrInterpolate(product.desc)}</p></div>`);
                     } else {
                       return [
-                        createVNode("div", { class: "w-8 h-8 rounded-lg border border-gray-200 bg-white flex items-center justify-center flex-shrink-0 group-hover/item:border-brand-300 group-hover/item:bg-brand-50 transition-colors mt-0.5" }, [
+                        createVNode("div", { class: "w-8 h-8 rounded-lg border border-gray-200 bg-white flex items-center justify-center flex-shrink-0 group-hover/item:border-[#52e147] group-hover/item:bg-[#ebfaeb] transition-colors mt-0.5" }, [
                           (openBlock(), createBlock("svg", {
-                            class: "w-[15px] h-[15px] text-gray-500 group-hover/item:text-brand-600 transition-colors",
+                            class: "w-[15px] h-[15px] text-gray-500 group-hover/item:text-[#15c411] transition-colors",
                             fill: "none",
                             stroke: "currentColor",
                             viewBox: "0 0 24 24"
@@ -1696,10 +1771,10 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
                         ]),
                         createVNode("div", { class: "min-w-0" }, [
                           createVNode("div", { class: "flex items-center gap-1.5 flex-wrap" }, [
-                            createVNode("p", { class: "text-sm font-semibold text-navy-900 group-hover/item:text-brand-600 transition-colors leading-tight" }, toDisplayString(product.label), 1),
+                            createVNode("p", { class: "text-sm font-semibold text-navy-900 group-hover/item:text-[#15c411] transition-colors leading-tight" }, toDisplayString(product.label), 1),
                             product.badge ? (openBlock(), createBlock("span", {
                               key: 0,
-                              class: "text-[9px] font-bold bg-brand-100 text-brand-600 px-1.5 py-0.5 rounded-full leading-none uppercase tracking-wide"
+                              class: "text-[9px] font-bold bg-[#ebfaeb] text-[#15c411] px-1.5 py-0.5 rounded-full leading-none uppercase tracking-wide"
                             }, toDisplayString(product.badge), 1)) : createCommentVNode("", true)
                           ]),
                           createVNode("p", { class: "text-xs text-gray-400 mt-0.5 leading-tight" }, toDisplayString(product.desc), 1)
@@ -1714,12 +1789,12 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
             });
             _push(`<!--]--></div></div>`);
           } else if (item.children) {
-            _push(`<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between border-b border-gray-100 pb-4 mb-4"><p class="text-xs font-bold text-gray-400 uppercase tracking-wider">${ssrInterpolate(item.label)}</p><img${ssrRenderAttr("src", _imports_1)} alt="Altisry" class="h-7 w-auto"></div><!--[-->`);
+            _push(`<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-12 gap-8 items-stretch min-h-[260px]"><div class="col-span-8"><div class="border-b border-gray-100 pt-2 pb-4 mb-4"><p class="text-xs font-bold text-gray-400 uppercase tracking-wider">${ssrInterpolate(item.label)}</p></div><!--[-->`);
             ssrRenderList(item.children, (child) => {
               _push(ssrRenderComponent(_component_NuxtLink, {
                 key: child.label,
                 to: child.href,
-                class: "block w-full px-5 py-3 text-sm font-semibold text-navy-900 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors",
+                class: "block w-full px-5 py-3 text-sm font-semibold text-navy-900 hover:text-[#15c411] hover:bg-[#ebfaeb] rounded-xl transition-colors",
                 onClick: ($event) => openMenu.value = null
               }, {
                 default: withCtx((_, _push2, _parent2, _scopeId) => {
@@ -1734,7 +1809,24 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
                 _: 2
               }, _parent));
             });
-            _push(`<!--]--></div>`);
+            _push(`<!--]--></div><div class="col-span-4 flex items-center"><div class="bg-slate-50 border border-slate-200 rounded-xl p-4"><p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2"> Discover Altisry </p><h4 class="text-base font-bold text-navy-900 leading-tight mb-2"> See how Altisry makes open banking simple </h4><p class="text-xs text-gray-600 leading-relaxed mb-3"> Explore real customer outcomes and how teams launch faster with our platform. </p>`);
+            _push(ssrRenderComponent(_component_NuxtLink, {
+              to: "/company/success-stories",
+              class: "inline-flex items-center justify-center px-3.5 py-2 rounded-lg bg-[#15c411] text-white text-xs font-semibold hover:bg-[#13ad0f] transition-colors",
+              onClick: ($event) => openMenu.value = null
+            }, {
+              default: withCtx((_, _push2, _parent2, _scopeId) => {
+                if (_push2) {
+                  _push2(` Read success stories `);
+                } else {
+                  return [
+                    createTextVNode(" Read success stories ")
+                  ];
+                }
+              }),
+              _: 2
+            }, _parent));
+            _push(`</div></div></div></div>`);
           } else {
             _push(`<!---->`);
           }
@@ -1744,10 +1836,10 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
         }
         _push(`</div>`);
       });
-      _push(`<!--]--></nav><div class="hidden lg:flex items-center gap-3"><a href="#" class="${ssrRenderClass([scrolled.value ? "text-navy-900 hover:bg-gray-50" : "text-white/80 hover:text-white hover:bg-white/10", "text-sm font-semibold px-4 py-2 rounded-lg transition-colors"])}"> Sign in </a>`);
+      _push(`<!--]--></nav><div class="hidden lg:flex items-center gap-3">`);
       _push(ssrRenderComponent(_component_NuxtLink, {
         to: "/contact",
-        class: "btn-primary shadow-lg shadow-brand-600/25"
+        class: "inline-flex items-center justify-center px-6 py-3 bg-[#15c411] text-white font-semibold rounded-lg hover:bg-[#13ad0f] transition-colors duration-200 text-sm shadow-lg shadow-[#15c411]/25"
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -1760,7 +1852,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div><button class="${ssrRenderClass([scrolled.value ? "text-gray-700 hover:bg-gray-100" : "text-white hover:bg-white/10", "lg:hidden p-2 rounded-lg transition-colors"])}">`);
+      _push(`</div><button class="${ssrRenderClass([headerOnWhite.value ? "text-gray-700 hover:bg-gray-100" : "text-white hover:bg-white/10", "lg:hidden p-2 rounded-lg transition-colors"])}">`);
       if (!mobileOpen.value) {
         _push(`<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>`);
       } else {
@@ -1770,7 +1862,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
       if (mobileOpen.value) {
         _push(`<div class="lg:hidden bg-white border-t border-gray-100 shadow-xl"><div class="max-w-7xl mx-auto px-4 py-4 space-y-1"><!--[-->`);
         ssrRenderList(navItems, (item) => {
-          _push(`<div><button class="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors">${ssrInterpolate(item.label)} <svg class="${ssrRenderClass([mobileSectionOpen.value === item.label ? "rotate-180" : "", "w-4 h-4 text-gray-400 transition-transform"])}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>`);
+          _push(`<div><button class="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#15c411] hover:bg-[#ebfaeb] rounded-xl transition-colors">${ssrInterpolate(item.label)} <svg class="${ssrRenderClass([mobileSectionOpen.value === item.label ? "rotate-180" : "", "w-4 h-4 text-gray-400 transition-transform"])}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>`);
           if (mobileSectionOpen.value === item.label) {
             _push(`<div class="ml-4 mb-2 space-y-0.5">`);
             if (item.megaMenu) {
@@ -1781,7 +1873,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
                   _push(ssrRenderComponent(_component_NuxtLink, {
                     key: p.label,
                     to: p.href,
-                    class: "block px-4 py-2 text-sm text-gray-600 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors",
+                    class: "block px-4 py-2 text-sm text-gray-600 hover:text-[#15c411] hover:bg-[#ebfaeb] rounded-xl transition-colors",
                     onClick: ($event) => mobileOpen.value = false
                   }, {
                     default: withCtx((_, _push2, _parent2, _scopeId) => {
@@ -1805,7 +1897,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
                 _push(ssrRenderComponent(_component_NuxtLink, {
                   key: child.label,
                   to: child.href,
-                  class: "block px-4 py-2 text-sm text-gray-600 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors",
+                  class: "block px-4 py-2 text-sm text-gray-600 hover:text-[#15c411] hover:bg-[#ebfaeb] rounded-xl transition-colors",
                   onClick: ($event) => mobileOpen.value = false
                 }, {
                   default: withCtx((_, _push2, _parent2, _scopeId) => {
@@ -1830,7 +1922,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
           }
           _push(`</div>`);
         });
-        _push(`<!--]--><div class="pt-3 border-t border-gray-100 flex flex-col gap-2"><a href="#" class="btn-outline w-full text-center text-sm">Sign in</a>`);
+        _push(`<!--]--><div class="pt-3 border-t border-gray-100 flex flex-col gap-2">`);
         _push(ssrRenderComponent(_component_NuxtLink, {
           to: "/contact",
           class: "btn-primary w-full text-center text-sm",
@@ -1930,7 +2022,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
     ];
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_2;
-      _push(`<footer${ssrRenderAttrs(mergeProps({ class: "bg-navy-950 text-white" }, _attrs))}><div class="border-b border-white/10"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10"><div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"><div><h3 class="text-lg font-bold mb-1">Be the first to get Altisry updates</h3><p class="text-white/50 text-sm"> Get expert insights, product updates, and industry trends — straight to your inbox. </p></div><form class="flex gap-2 w-full sm:w-auto"><input${ssrRenderAttr("value", email.value)} type="email" placeholder="your@company.com" required class="flex-1 sm:w-64 px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition"><button type="submit" class="btn-primary whitespace-nowrap text-sm">Subscribe</button></form></div></div></div><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"><div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-16"><div class="col-span-2 md:col-span-3 lg:col-span-1">`);
+      _push(`<footer${ssrRenderAttrs(mergeProps({ class: "relative overflow-hidden bg-[#060809] text-white" }, _attrs))}><div class="absolute top-0 left-1/4 w-96 h-96 bg-[#15c411] rounded-full opacity-20 blur-3xl -translate-y-1/2"></div><div class="absolute bottom-0 right-1/4 w-80 h-80 bg-[#15c411] rounded-full opacity-10 blur-3xl translate-y-1/2"></div><div class="relative border-b border-white/10"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10"><div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"><div><h3 class="text-lg font-bold mb-1">Be the first to get Altisry updates</h3><p class="text-white/90 text-sm"> Get expert insights, product updates, and industry trends — straight to your inbox. </p></div><form class="flex gap-2 w-full sm:w-auto"><input${ssrRenderAttr("value", email.value)} type="email" placeholder="your@company.com" required class="flex-1 sm:w-64 px-4 py-2.5 rounded-xl bg-white/10 border border-white/25 text-sm text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition"><button type="submit" class="btn-primary whitespace-nowrap text-sm">Subscribe</button></form></div></div></div><div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"><div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-16"><div class="col-span-2 md:col-span-3 lg:col-span-1">`);
       _push(ssrRenderComponent(_component_NuxtLink, {
         to: "/",
         class: "inline-flex items-center mb-5"
@@ -1950,9 +2042,9 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`<p class="text-white/50 text-sm leading-relaxed mb-6"> Global open banking and open finance platform powering tomorrow&#39;s financial services. </p><div class="flex items-center gap-3"><!--[-->`);
+      _push(`<p class="text-white/90 text-sm leading-relaxed mb-6"> Global open banking and open finance platform powering tomorrow&#39;s financial services. </p><div class="flex items-center gap-3"><!--[-->`);
       ssrRenderList(socials, (social) => {
-        _push(`<a${ssrRenderAttr("href", social.href)} target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-brand-600 flex items-center justify-center transition-colors"${ssrRenderAttr("aria-label", social.label)}><svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path${ssrRenderAttr("d", social.icon)}></path></svg></a>`);
+        _push(`<a${ssrRenderAttr("href", social.href)} target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#15c411] flex items-center justify-center transition-colors"${ssrRenderAttr("aria-label", social.label)}><svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path${ssrRenderAttr("d", social.icon)}></path></svg></a>`);
       });
       _push(`<!--]--></div></div><!--[-->`);
       ssrRenderList(footerNav, (col) => {
@@ -1961,7 +2053,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
           _push(`<li>`);
           _push(ssrRenderComponent(_component_NuxtLink, {
             to: link.href,
-            class: "text-sm text-white/50 hover:text-white transition-colors leading-relaxed"
+            class: "text-sm text-white/90 hover:text-white transition-colors leading-relaxed"
           }, {
             default: withCtx((_, _push2, _parent2, _scopeId) => {
               if (_push2) {
@@ -1978,12 +2070,12 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
         });
         _push(`<!--]--></ul></div>`);
       });
-      _push(`<!--]--></div><div class="border-t border-white/10 pt-8"><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4"><p class="text-white/40 text-xs">© 2026, Altisry Inc. All rights reserved.</p><div class="flex items-center flex-wrap gap-4"><!--[-->`);
+      _push(`<!--]--></div><div class="border-t border-white/10 pt-8"><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4"><p class="text-white/90 text-xs">© 2026, Altisry Inc. All rights reserved.</p><div class="flex items-center flex-wrap gap-4"><!--[-->`);
       ssrRenderList(legalLinks, (link) => {
         _push(ssrRenderComponent(_component_NuxtLink, {
           key: link.label,
           to: link.href,
-          class: "text-xs text-white/40 hover:text-white/70 transition-colors"
+          class: "text-xs text-white/90 hover:text-white transition-colors"
         }, {
           default: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
@@ -1997,7 +2089,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
           _: 2
         }, _parent));
       });
-      _push(`<!--]--></div></div><p class="text-white/25 text-xs mt-4 leading-relaxed max-w-3xl"> Altisry Limited, registered in England and Wales, is authorized by the FCA. All logos, trademarks, and brand names used on this website that are not owned by Altisry Inc. are the property of their respective owners and are used for identification purposes only. </p></div></div></footer>`);
+      _push(`<!--]--></div></div><p class="text-white/80 text-xs mt-4 leading-relaxed max-w-3xl"> Altisry Limited, registered in England and Wales, is authorized by the FCA. All logos, trademarks, and brand names used on this website that are not owned by Altisry Inc. are the property of their respective owners and are used for identification purposes only. </p></div></div></footer>`);
     };
   }
 });
@@ -2143,5 +2235,5 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 
-export { __nuxt_component_2 as _, _export_sfc as a, _sfc_main$3 as b, _sfc_main$2 as c, useRoute as d, entry_default as default, useNuxtApp as e, asyncDataDefaults as f, createError as g, useAppConfig as h, useRuntimeConfig as i, useHead as j, useSeoMeta as u };
+export { _sfc_main$3 as _, __nuxt_component_2 as a, _sfc_main$2 as b, useRoute as c, _export_sfc as d, entry_default as default, useNuxtApp as e, asyncDataDefaults as f, createError as g, useAppConfig as h, useRuntimeConfig as i, useHead as j, useSeoMeta as u };
 //# sourceMappingURL=server.mjs.map

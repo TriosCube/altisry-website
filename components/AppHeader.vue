@@ -2,23 +2,27 @@
   <header
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     :class="[
-      scrolled || desktopMenuOpen ? 'bg-white border-b border-gray-100 shadow-sm' : 'bg-transparent',
+      headerOnWhite
+        ? 'bg-white border-b border-gray-100 shadow-sm'
+        : darkHeader
+        ? 'bg-[#060809] border-b border-white/10 shadow-sm'
+        : 'bg-transparent',
       hidden && !desktopMenuOpen ? '-translate-y-full' : 'translate-y-0',
     ]"
   >
+    <div
+      v-if="darkHeader"
+      class="pointer-events-none absolute inset-0"
+    >
+      <div class="absolute -top-16 left-1/4 w-72 h-72 bg-[#15c411] rounded-full opacity-15 blur-3xl"></div>
+      <div class="absolute -bottom-20 right-1/4 w-64 h-64 bg-[#15c411] rounded-full opacity-10 blur-3xl"></div>
+    </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[70]">
       <div class="flex items-center justify-between h-16 md:h-20">
 
-        <!-- Logo — swap between light (white) and dark (blue) version -->
+        <!-- Logo -->
         <NuxtLink to="/" class="flex items-center flex-shrink-0">
           <img
-            v-if="!scrolled && !desktopMenuOpen"
-            src="~/assets/svg/logo_dark.svg"
-            alt="Altisry"
-            class="h-9 md:h-10 w-auto"
-          />
-          <img
-            v-else
             src="~/assets/svg/logo_light.svg"
             alt="Altisry"
             class="h-9 md:h-10 w-auto"
@@ -36,11 +40,9 @@
           >
             <button
               class="flex items-center gap-1 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"
-              :class="desktopMenuOpen
+              :class="headerOnWhite
                 ? 'text-navy-900 hover:text-black hover:bg-gray-100'
-                : scrolled
-                  ? 'text-gray-700 hover:text-navy-900 hover:bg-gray-50'
-                  : 'text-white/80 hover:text-white hover:bg-white/10'"
+                : 'text-white hover:text-white hover:bg-white/10'"
             >
               {{ item.label }}
               <svg
@@ -55,7 +57,7 @@
             <!-- Active underline -->
             <div
               v-if="openMenu === item.label"
-              class="absolute bottom-0 left-4 right-4 h-0.5 bg-brand-600 rounded-full"
+              class="absolute bottom-0 left-4 right-4 h-0.5 bg-[#15c411] rounded-full"
             />
 
             <!-- Dropdown -->
@@ -78,7 +80,7 @@
                   v-if="item.megaMenu"
                   class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
                 >
-                  <div class="border-b border-gray-100 pb-4 mb-5">
+                  <div class="border-b border-gray-100 pt-2 pb-4 mb-5">
                     <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Explore {{ item.label }}</p>
                   </div>
                   <div class="grid grid-cols-3 gap-x-6">
@@ -90,20 +92,20 @@
                         v-for="product in col.items"
                         :key="product.label"
                         :to="product.href"
-                        class="flex items-start gap-3 px-2 py-2.5 rounded-xl hover:bg-brand-50 transition-colors group/item"
+                        class="flex items-start gap-3 px-2 py-2.5 rounded-xl hover:bg-[#ebfaeb] transition-colors group/item"
                         @click="openMenu = null"
                       >
-                        <div class="w-8 h-8 rounded-lg border border-gray-200 bg-white flex items-center justify-center flex-shrink-0 group-hover/item:border-brand-300 group-hover/item:bg-brand-50 transition-colors mt-0.5">
-                          <svg class="w-[15px] h-[15px] text-gray-500 group-hover/item:text-brand-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-8 h-8 rounded-lg border border-gray-200 bg-white flex items-center justify-center flex-shrink-0 group-hover/item:border-[#52e147] group-hover/item:bg-[#ebfaeb] transition-colors mt-0.5">
+                          <svg class="w-[15px] h-[15px] text-gray-500 group-hover/item:text-[#15c411] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" :d="product.icon" />
                           </svg>
                         </div>
                         <div class="min-w-0">
                           <div class="flex items-center gap-1.5 flex-wrap">
-                            <p class="text-sm font-semibold text-navy-900 group-hover/item:text-brand-600 transition-colors leading-tight">
+                            <p class="text-sm font-semibold text-navy-900 group-hover/item:text-[#15c411] transition-colors leading-tight">
                               {{ product.label }}
                             </p>
-                            <span v-if="product.badge" class="text-[9px] font-bold bg-brand-100 text-brand-600 px-1.5 py-0.5 rounded-full leading-none uppercase tracking-wide">
+                            <span v-if="product.badge" class="text-[9px] font-bold bg-[#ebfaeb] text-[#15c411] px-1.5 py-0.5 rounded-full leading-none uppercase tracking-wide">
                               {{ product.badge }}
                             </span>
                           </div>
@@ -121,14 +123,14 @@
                 >
                   <div class="grid grid-cols-12 gap-8 items-stretch min-h-[260px]">
                     <div class="col-span-8">
-                      <div class="border-b border-gray-100 pb-4 mb-4">
+                      <div class="border-b border-gray-100 pt-2 pb-4 mb-4">
                         <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">{{ item.label }}</p>
                       </div>
                       <NuxtLink
                         v-for="child in item.children"
                         :key="child.label"
                         :to="child.href"
-                        class="block w-full px-5 py-3 text-sm font-semibold text-navy-900 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors"
+                        class="block w-full px-5 py-3 text-sm font-semibold text-navy-900 hover:text-[#15c411] hover:bg-[#ebfaeb] rounded-xl transition-colors"
                         @click="openMenu = null"
                       >
                         {{ child.label }}
@@ -147,7 +149,7 @@
                         </p>
                         <NuxtLink
                           to="/company/success-stories"
-                          class="inline-flex items-center justify-center px-3.5 py-2 rounded-lg bg-brand-600 text-white text-xs font-semibold hover:bg-brand-500 transition-colors"
+                          class="inline-flex items-center justify-center px-3.5 py-2 rounded-lg bg-[#15c411] text-white text-xs font-semibold hover:bg-[#13ad0f] transition-colors"
                           @click="openMenu = null"
                         >
                           Read success stories
@@ -163,18 +165,7 @@
 
         <!-- Right CTAs -->
         <div class="hidden lg:flex items-center gap-3">
-          <a
-            href="#"
-            class="text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
-            :class="desktopMenuOpen
-              ? 'text-navy-900 hover:bg-gray-100'
-              : scrolled
-                ? 'text-navy-900 hover:bg-gray-50'
-                : 'text-white/80 hover:text-white hover:bg-white/10'"
-          >
-            Sign in
-          </a>
-          <NuxtLink to="/contact" class="btn-primary shadow-lg shadow-brand-600/25">
+          <NuxtLink to="/contact" class="inline-flex items-center justify-center px-6 py-3 bg-[#15c411] text-white font-semibold rounded-lg hover:bg-[#13ad0f] transition-colors duration-200 text-sm shadow-lg shadow-[#15c411]/25">
             Contact us
           </NuxtLink>
         </div>
@@ -182,7 +173,7 @@
         <!-- Mobile toggle -->
         <button
           class="lg:hidden p-2 rounded-lg transition-colors"
-          :class="scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'"
+          :class="headerOnWhite ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'"
           @click="mobileOpen = !mobileOpen"
         >
           <svg v-if="!mobileOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -205,7 +196,7 @@
         <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
           <div v-for="item in navItems" :key="item.label">
             <button
-              class="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors"
+              class="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#15c411] hover:bg-[#ebfaeb] rounded-xl transition-colors"
               @click="toggleMobileSection(item.label)"
             >
               {{ item.label }}
@@ -218,7 +209,7 @@
                 <template v-for="col in item.megaMenu" :key="col.category">
                   <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest px-4 pt-3 pb-1">{{ col.category }}</p>
                   <NuxtLink v-for="p in col.items" :key="p.label" :to="p.href"
-                    class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors"
+                    class="block px-4 py-2 text-sm text-gray-600 hover:text-[#15c411] hover:bg-[#ebfaeb] rounded-xl transition-colors"
                     @click="mobileOpen = false">
                     {{ p.label }}
                   </NuxtLink>
@@ -226,7 +217,7 @@
               </template>
               <template v-else-if="item.children">
                 <NuxtLink v-for="child in item.children" :key="child.label" :to="child.href"
-                  class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors"
+                  class="block px-4 py-2 text-sm text-gray-600 hover:text-[#15c411] hover:bg-[#ebfaeb] rounded-xl transition-colors"
                   @click="mobileOpen = false">
                   {{ child.label }}
                 </NuxtLink>
@@ -234,7 +225,6 @@
             </div>
           </div>
           <div class="pt-3 border-t border-gray-100 flex flex-col gap-2">
-            <a href="#" class="btn-outline w-full text-center text-sm">Sign in</a>
             <NuxtLink to="/contact" class="btn-primary w-full text-center text-sm" @click="mobileOpen = false">Contact us</NuxtLink>
           </div>
         </div>
@@ -245,6 +235,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { useRoute } from 'nuxt/app'
 
 const scrolled = ref(false)
 const hidden = ref(false)
@@ -255,6 +246,10 @@ let closeTimer: ReturnType<typeof setTimeout> | null = null
 
 let lastY = 0
 const desktopMenuOpen = computed(() => openMenu.value !== null)
+const route = useRoute()
+const isHomePage = computed(() => route.path === '/')
+const headerOnWhite = computed(() => desktopMenuOpen.value)
+const darkHeader = computed(() => !desktopMenuOpen.value && (!isHomePage.value || scrolled.value))
 
 function clearCloseTimer() {
   if (closeTimer) {
@@ -328,7 +323,7 @@ const navItems = [
         category: 'Payments',
         items: [
           { label: 'Pay by Bank', desc: 'Pay with any bank from Europe & UK', href: '/products/pay-by-bank', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' },
-          { label: 'Bulk Payments', desc: 'Pay multiple recipients at once', href: '/products/pay-by-bank', badge: 'New', icon: 'M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' },
+          { label: 'Bulk Payments', desc: 'Pay multiple recipients at once', href: '/products/bulk-payments', badge: 'New', icon: 'M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' },
           { label: 'AML Monitoring', desc: 'Identify and act on suspicious activity', href: '/products/aml', badge: 'New', icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z' },
         ],
       },
@@ -349,17 +344,19 @@ const navItems = [
     children: [
       { label: 'About Us', href: '/company/about' },
       { label: 'Success Stories', href: '/company/success-stories' },
+      { label: 'Blog', href: '/blog' },
       { label: 'Partnerships', href: '/company/partnerships' },
       { label: 'Careers', href: '/company/careers' },
       { label: 'Security', href: '/company/security' },
+      { label: 'Service Status', href: '/status' },
     ],
   },
   {
     label: 'Developers',
     children: [
-      { label: 'Documentation', href: '/developers' },
-      { label: 'API Reference', href: '/developers' },
-      { label: 'Sandbox', href: '/developers' },
+      { label: 'Documentation', href: '/developers/docs' },
+      { label: 'API Reference', href: '/developers/api' },
+      { label: 'Sandbox', href: '/developers/sandbox' },
     ],
   },
 ]

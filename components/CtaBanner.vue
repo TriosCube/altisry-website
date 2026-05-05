@@ -1,6 +1,8 @@
 <template>
-  <section class="bg-navy-900 py-16 md:py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section class="relative overflow-hidden bg-[#0f360e] py-16 md:py-20">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#15c411] rounded-full opacity-20 blur-3xl -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-[#15c411] rounded-full opacity-10 blur-3xl translate-y-1/2"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-5">
         {{ title || 'Ready to get started?' }}
       </h2>

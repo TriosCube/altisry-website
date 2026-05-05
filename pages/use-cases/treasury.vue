@@ -57,19 +57,19 @@
       </section>
 
       <!-- Multi-entity section -->
-      <section class="py-20 bg-navy-900">
+      <section class="py-20 bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p class="section-label text-brand-400">Multi-Entity</p>
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-5">Manage all your entities in one place</h2>
-          <p class="text-white/60 text-lg mb-12 max-w-2xl mx-auto">
+          <p class="section-label">Multi-Entity</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Manage all your entities in one place</h2>
+          <p class="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
             Whether you have 2 or 200 legal entities across multiple countries, Altisry gives your treasury team
             consolidated visibility and control.
           </p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div v-for="point in multiEntity" :key="point.title" class="bg-white/5 border border-white/10 rounded-2xl p-6 text-left">
-              <p class="text-3xl font-bold text-brand-400 mb-2">{{ point.stat }}</p>
-              <h3 class="font-bold text-white mb-2">{{ point.title }}</h3>
-              <p class="text-sm text-white/50 leading-relaxed">{{ point.desc }}</p>
+            <div v-for="point in multiEntity" :key="point.title" class="bg-brand-50 border border-brand-100 rounded-2xl p-6 text-left">
+              <p class="text-3xl font-bold text-brand-600 mb-2">{{ point.stat }}</p>
+              <h3 class="font-bold text-navy-900 mb-2">{{ point.title }}</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">{{ point.desc }}</p>
             </div>
           </div>
         </div>
@@ -85,6 +85,8 @@
 </template>
 
 <script setup lang="ts">
+import { useSeoMeta } from 'nuxt/app'
+
 useSeoMeta({
   title: 'Treasury Management | Altisry Open Banking',
   description: 'A 360-degree view of financials for corporates of any size. Unified access to 5,000+ financial institutions.',

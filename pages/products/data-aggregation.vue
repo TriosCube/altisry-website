@@ -81,7 +81,7 @@
               </div>
               <NuxtLink to="/developers/docs" class="btn-primary">View documentation</NuxtLink>
             </div>
-            <div class="flex-1 bg-navy-900 rounded-2xl p-6 font-mono text-sm overflow-x-auto">
+            <div class="flex-1 bg-[#060809] rounded-2xl p-6 font-mono text-sm overflow-x-auto">
               <div class="text-green-400 mb-2"># Connect a bank account</div>
               <div class="text-white/60">curl -X POST \</div>
               <div class="text-white/60 ml-4">https://api.altisry.co/v6/connect_sessions/create \</div>

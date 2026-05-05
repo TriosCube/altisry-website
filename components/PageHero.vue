@@ -1,14 +1,14 @@
 <template>
   <section
     class="relative overflow-hidden pt-36 pb-16 md:pt-44 md:pb-20"
-    :class="dark ? 'bg-navy-900' : 'bg-gradient-to-br from-brand-50 to-white'"
+    :class="dark ? 'bg-[#060809]' : 'bg-gradient-to-br from-brand-50 to-white'"
   >
     <!-- Background pattern -->
     <div class="absolute inset-0 opacity-5" :class="dark ? 'opacity-10' : 'opacity-5'">
       <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.5" :fill="dark ? 'white' : '#1036C1'" />
+            <circle cx="2" cy="2" r="1.5" :fill="dark ? 'white' : '#15c411'" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#dots)" />

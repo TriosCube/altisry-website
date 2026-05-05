@@ -39,7 +39,7 @@
         <span class="text-xs text-gray-500">Interest rate</span>
         <span class="text-sm font-bold text-green-600">3.9% APR</span>
       </div>
-      <button class="w-full bg-navy-900 hover:bg-navy-800 text-white font-bold py-3.5 rounded-xl text-sm transition-colors flex items-center justify-center gap-2 mt-2">
+      <button class="w-full bg-[#15c411] hover:bg-[#13ad0f] text-white font-bold py-3.5 rounded-xl text-sm transition-colors flex items-center justify-center gap-2 mt-2">
         Confirm & Pay deposit
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />

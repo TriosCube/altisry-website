@@ -39,7 +39,7 @@
       </section>
 
       <!-- Stats -->
-      <section class="py-16 bg-navy-900">
+      <section class="py-16 bg-[#060809]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div v-for="stat in stats" :key="stat.value">

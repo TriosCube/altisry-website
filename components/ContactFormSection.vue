@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 md:py-28 bg-brand-50">
+  <section class="py-20 md:py-28 bg-[#f2fdf1]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
         <!-- Left content -->
@@ -14,7 +14,7 @@
 
           <div class="space-y-4">
             <div v-for="benefit in benefits" :key="benefit.text" class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-full bg-brand-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div class="w-6 h-6 rounded-full bg-[#15c411] flex items-center justify-center flex-shrink-0 mt-0.5">
                 <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                 </svg>
@@ -37,7 +37,7 @@
                     type="text"
                     placeholder="John Smith"
                     required
-                    class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition"
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#52e147] focus:border-transparent transition"
                   />
                 </div>
                 <div>
@@ -47,7 +47,7 @@
                     type="email"
                     placeholder="john@company.com"
                     required
-                    class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition"
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#52e147] focus:border-transparent transition"
                   />
                 </div>
               </div>
@@ -58,7 +58,7 @@
                   <select
                     v-model="form.country"
                     required
-                    class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition bg-white"
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 focus:outline-none focus:ring-2 focus:ring-[#52e147] focus:border-transparent transition bg-white"
                   >
                     <option value="" disabled>Select country</option>
                     <option v-for="c in countries" :key="c" :value="c">{{ c }}</option>
@@ -70,7 +70,7 @@
                     v-model="form.phone"
                     type="tel"
                     placeholder="+44 20 0000 0000"
-                    class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition"
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#52e147] focus:border-transparent transition"
                   />
                 </div>
               </div>
@@ -82,7 +82,7 @@
                   type="text"
                   placeholder="Acme Corp"
                   required
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition"
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#52e147] focus:border-transparent transition"
                 />
               </div>
 
@@ -92,7 +92,7 @@
                   v-model="form.message"
                   rows="3"
                   placeholder="Tell us about your use case..."
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition resize-none"
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#52e147] focus:border-transparent transition resize-none"
                 ></textarea>
               </div>
 
@@ -101,7 +101,7 @@
                   v-model="form.newsletter"
                   type="checkbox"
                   id="newsletter"
-                  class="mt-1 w-4 h-4 text-brand-600 border-gray-300 rounded focus:ring-brand-400"
+                  class="mt-1 w-4 h-4 text-[#15c411] border-gray-300 rounded focus:ring-[#52e147]"
                 />
                 <label for="newsletter" class="text-xs text-gray-600 leading-relaxed">
                   I agree to receive emails from Altisry about the company's news, product updates and industry insights.
@@ -110,14 +110,14 @@
 
               <p class="text-xs text-gray-500">
                 By submitting this form, I agree to the
-                <NuxtLink to="/legal/terms" class="text-brand-600 hover:underline">Terms of Service</NuxtLink>
+                <NuxtLink to="/legal/terms" class="text-[#15c411] hover:underline">Terms of Service</NuxtLink>
                 and to the processing of my contact details in accordance with the
-                <NuxtLink to="/legal/privacy" class="text-brand-600 hover:underline">Privacy Policy</NuxtLink>.
+                <NuxtLink to="/legal/privacy" class="text-[#15c411] hover:underline">Privacy Policy</NuxtLink>.
               </p>
 
               <button
                 type="submit"
-                class="w-full btn-primary py-4 text-base"
+                class="w-full inline-flex items-center justify-center py-4 px-6 rounded-lg bg-[#15c411] text-white font-semibold text-base hover:bg-[#13ad0f] transition-colors disabled:opacity-70"
                 :disabled="submitting"
               >
                 <span v-if="submitting">Sending...</span>
@@ -136,6 +136,8 @@
 </template>
 
 <script setup lang="ts">
+import { reactive, ref } from 'vue'
+
 const form = reactive({
   name: '',
   email: '',
