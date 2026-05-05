@@ -8,7 +8,6 @@
         description="Access real-time account data, transaction history, and balances from thousands of financial institutions worldwide — all through one powerful, unified integration."
         parent-label="Products"
         parent-href="/products"
-        :dark="true"
       >
         <template #cta>
           <NuxtLink to="/get-started" class="btn-primary text-base px-8 py-4">Get API keys</NuxtLink>
@@ -81,21 +80,21 @@
               </div>
               <NuxtLink to="/developers/docs" class="btn-primary">View documentation</NuxtLink>
             </div>
-            <div class="flex-1 bg-[#060809] rounded-2xl p-6 font-mono text-sm overflow-x-auto">
-              <div class="text-green-400 mb-2"># Connect a bank account</div>
-              <div class="text-white/60">curl -X POST \</div>
-              <div class="text-white/60 ml-4">https://api.altisry.co/v6/connect_sessions/create \</div>
-              <div class="text-white/60 ml-4">-H <span class="text-yellow-300">"Authorization: Bearer {API_KEY}"</span> \</div>
-              <div class="text-white/60 ml-4">-H <span class="text-yellow-300">"Content-Type: application/json"</span> \</div>
-              <div class="text-white/60 ml-4">-d <span class="text-green-300">'{</span></div>
-              <div class="text-green-300 ml-8">"customer_id": "cust_12345",</div>
-              <div class="text-green-300 ml-8">"consent": "account_details,transactions",</div>
-              <div class="text-green-300 ml-8">"return_to": "https://yourapp.com/callback"</div>
-              <div class="text-green-300 ml-4">}'</div>
+            <div class="flex-1 bg-gray-50 border border-gray-200 rounded-2xl p-6 font-mono text-sm overflow-x-auto">
+              <div class="text-brand-600 mb-2"># Connect a bank account</div>
+              <div class="text-gray-600">curl -X POST \</div>
+              <div class="text-gray-600 ml-4">https://api.altisry.co/v6/connect_sessions/create \</div>
+              <div class="text-gray-600 ml-4">-H <span class="text-amber-600">"Authorization: Bearer {API_KEY}"</span> \</div>
+              <div class="text-gray-600 ml-4">-H <span class="text-amber-600">"Content-Type: application/json"</span> \</div>
+              <div class="text-gray-600 ml-4">-d <span class="text-green-700">'{</span></div>
+              <div class="text-green-700 ml-8">"customer_id": "cust_12345",</div>
+              <div class="text-green-700 ml-8">"consent": "account_details,transactions",</div>
+              <div class="text-green-700 ml-8">"return_to": "https://yourapp.com/callback"</div>
+              <div class="text-green-700 ml-4">}'</div>
               <br />
               <div class="text-brand-400">// Response</div>
-              <div class="text-white/60">{"connect_url": "https://connect.altisry.co/...",</div>
-              <div class="text-white/60 ml-2"> "expires_at": "2026-05-05T12:00:00Z"}</div>
+              <div class="text-gray-600">{"connect_url": "https://connect.altisry.co/...",</div>
+              <div class="text-gray-600 ml-2"> "expires_at": "2026-05-05T12:00:00Z"}</div>
             </div>
           </div>
         </div>

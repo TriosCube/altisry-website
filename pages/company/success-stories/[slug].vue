@@ -3,7 +3,7 @@
     <AppHeader />
     <main>
       <!-- Hero -->
-      <section class="relative overflow-hidden bg-[#060809] pt-40 pb-24 md:pt-48 md:pb-32">
+      <section class="relative overflow-hidden bg-gradient-to-br from-brand-50 to-white pt-40 pb-24 md:pt-48 md:pb-32 border-b border-brand-100">
         <div class="absolute inset-0 opacity-10">
           <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -18,12 +18,12 @@
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Breadcrumb -->
-          <div class="flex items-center gap-2 mb-8 text-sm text-white/40">
-            <NuxtLink to="/company/success-stories" class="hover:text-white/70 transition-colors">Success Stories</NuxtLink>
+          <div class="flex items-center gap-2 mb-8 text-sm text-gray-500">
+            <NuxtLink to="/company/success-stories" class="hover:text-navy-900 transition-colors">Success Stories</NuxtLink>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
-            <span class="text-white/60">{{ story.company }}</span>
+            <span class="text-gray-600">{{ story.company }}</span>
           </div>
 
           <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
@@ -36,23 +36,23 @@
                   {{ story.abbr }}
                 </div>
                 <div>
-                  <p class="text-white font-bold text-xl">{{ story.company }}</p>
+                  <p class="text-navy-900 font-bold text-xl">{{ story.company }}</p>
                   <div class="flex items-center gap-2 mt-1">
-                    <span class="text-xs bg-white/10 text-white/60 px-2.5 py-1 rounded-full border border-white/20">{{ story.location }}</span>
+                    <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full border border-gray-200">{{ story.location }}</span>
                     <span class="text-xs bg-brand-600/30 text-brand-300 px-2.5 py-1 rounded-full border border-brand-500/30">{{ story.industry }}</span>
                   </div>
                 </div>
               </div>
-              <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+              <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-navy-900 leading-tight tracking-tight">
                 {{ story.headline }}
               </h1>
             </div>
 
             <!-- Key stat badges -->
             <div class="flex gap-3 flex-wrap lg:flex-nowrap">
-              <div v-for="stat in story.stats" :key="stat.label" class="bg-white/10 border border-white/20 rounded-2xl px-5 py-3 text-center backdrop-blur-sm min-w-[90px]">
-                <p class="text-2xl font-black text-white">{{ stat.value }}</p>
-                <p class="text-white/50 text-xs mt-0.5">{{ stat.label }}</p>
+              <div v-for="stat in story.stats" :key="stat.label" class="bg-brand-50 border border-brand-100 rounded-2xl px-5 py-3 text-center min-w-[90px]">
+                <p class="text-2xl font-black text-navy-900">{{ stat.value }}</p>
+                <p class="text-gray-500 text-xs mt-0.5">{{ stat.label }}</p>
               </div>
             </div>
           </div>
@@ -156,12 +156,12 @@
               </div>
 
               <!-- Results summary card -->
-              <div class="bg-[#060809] rounded-2xl p-6">
-                <h3 class="text-sm font-bold text-white/50 uppercase tracking-wider mb-5">Key Results</h3>
+              <div class="bg-brand-50 border border-brand-100 rounded-2xl p-6">
+                <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-5">Key Results</h3>
                 <div class="space-y-4">
-                  <div v-for="stat in story.stats" :key="stat.label" class="flex items-center justify-between border-b border-white/10 pb-4 last:border-0 last:pb-0">
-                    <span class="text-white/60 text-sm">{{ stat.label }}</span>
-                    <span class="text-white font-black text-lg">{{ stat.value }}</span>
+                  <div v-for="stat in story.stats" :key="stat.label" class="flex items-center justify-between border-b border-brand-100 pb-4 last:border-0 last:pb-0">
+                    <span class="text-gray-600 text-sm">{{ stat.label }}</span>
+                    <span class="text-navy-900 font-black text-lg">{{ stat.value }}</span>
                   </div>
                 </div>
               </div>

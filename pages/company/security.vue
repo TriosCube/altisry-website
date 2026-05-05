@@ -8,7 +8,6 @@
         description="We are ISO 27001-certified and PSD2-licensed, employing the highest international security standards to safely access financial data and initiate payments."
         parent-label="Company"
         parent-href="/company"
-        :dark="true"
       />
 
       <!-- Certifications -->

@@ -6,7 +6,6 @@
         tag="Blog"
         title="BLOG"
         description="Read product updates, engineering deep dives, and market analysis from the Altisry team."
-        :dark="true"
       />
 
       <section class="py-20 bg-white">

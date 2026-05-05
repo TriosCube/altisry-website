@@ -6,7 +6,6 @@
         tag="Service Status"
         title="Platform and API status"
         description="Track uptime, incidents, and maintenance windows across Altisry services."
-        :dark="true"
       />
 
       <section class="py-16 bg-white">

@@ -8,7 +8,6 @@
         description="Follow step-by-step guides to launch onboarding, aggregation, payments, and treasury use cases."
         parent-label="Developers"
         parent-href="/developers"
-        :dark="true"
       />
 
       <section class="py-20 bg-brand-50">

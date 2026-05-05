@@ -8,7 +8,6 @@
         :description="post.excerpt"
         parent-label="Blog"
         parent-href="/blog"
-        :dark="true"
       />
 
       <section class="py-16 bg-white">

@@ -3,7 +3,7 @@
     <AppHeader />
     <main>
       <!-- Hero -->
-      <section class="relative overflow-hidden bg-[#060809] pt-40 pb-20 md:pt-48 md:pb-24">
+      <section class="relative overflow-hidden bg-gradient-to-br from-brand-50 to-white pt-40 pb-20 md:pt-48 md:pb-24 border-b border-brand-100">
         <div class="absolute inset-0 opacity-10">
           <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -17,14 +17,14 @@
         <div class="absolute top-0 right-1/3 w-96 h-96 bg-brand-600 rounded-full blur-3xl opacity-20 -translate-y-1/2" />
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/70 text-sm font-medium mb-6">
+          <p class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-100 border border-brand-200 text-brand-700 text-sm font-medium mb-6">
             <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
             300+ companies worldwide
           </p>
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight mb-6">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-navy-900 leading-tight tracking-tight mb-6">
             Success Stories
           </h1>
-          <p class="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             See how companies across industries are using Altisry to build the future of financial services.
           </p>
         </div>
@@ -40,7 +40,7 @@
               @click="activeFilter = filter"
               class="flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold transition-all"
               :class="activeFilter === filter
-                ? 'bg-[#060809] text-white shadow-sm'
+                ? 'bg-brand-600 text-white shadow-sm'
                 : 'text-gray-600 hover:text-navy-900 hover:bg-gray-100'"
             >
               {{ filter }}
@@ -65,7 +65,7 @@
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p class="section-label mb-6">Featured</p>
-          <div class="bg-[#060809] rounded-3xl overflow-hidden">
+          <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm">
             <div class="flex flex-col lg:flex-row">
               <!-- Content -->
               <div class="flex-1 p-10 md:p-14 flex flex-col justify-between">
@@ -76,9 +76,9 @@
                       {{ featured.abbr }}
                     </div>
                     <div>
-                      <p class="text-white font-bold text-lg">{{ featured.company }}</p>
+                      <p class="text-navy-900 font-bold text-lg">{{ featured.company }}</p>
                       <div class="flex items-center gap-2 mt-1">
-                        <span class="text-xs bg-white/10 text-white/60 px-2.5 py-1 rounded-full border border-white/20">{{ featured.industry }}</span>
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full border border-gray-200">{{ featured.industry }}</span>
                         <span class="text-xs bg-brand-600/30 text-brand-300 px-2.5 py-1 rounded-full border border-brand-500/30">{{ featured.product }}</span>
                       </div>
                     </div>
@@ -86,21 +86,21 @@
 
                   <!-- Quote -->
                   <blockquote class="mb-8">
-                    <p class="text-2xl md:text-3xl font-bold text-white leading-snug mb-6">
+                    <p class="text-2xl md:text-3xl font-bold text-navy-900 leading-snug mb-6">
                       "{{ featured.quote }}"
                     </p>
                     <footer>
-                      <p class="text-white font-semibold">{{ featured.author }}</p>
-                      <p class="text-white/50 text-sm">{{ featured.role }}, {{ featured.company }}</p>
+                      <p class="text-navy-900 font-semibold">{{ featured.author }}</p>
+                      <p class="text-gray-500 text-sm">{{ featured.role }}, {{ featured.company }}</p>
                     </footer>
                   </blockquote>
                 </div>
 
                 <!-- Stats row -->
                 <div class="grid grid-cols-3 gap-5 mb-8">
-                  <div v-for="stat in featured.stats" :key="stat.label" class="bg-white/5 border border-white/10 rounded-2xl p-4">
-                    <p class="text-3xl font-black text-white">{{ stat.value }}</p>
-                    <p class="text-white/50 text-xs mt-1">{{ stat.label }}</p>
+                  <div v-for="stat in featured.stats" :key="stat.label" class="bg-brand-50 border border-brand-100 rounded-2xl p-4">
+                    <p class="text-3xl font-black text-navy-900">{{ stat.value }}</p>
+                    <p class="text-gray-500 text-xs mt-1">{{ stat.label }}</p>
                   </div>
                 </div>
 
@@ -113,16 +113,16 @@
               </div>
 
               <!-- Side image / visual -->
-              <div class="lg:w-[380px] bg-gradient-to-br from-brand-600/20 to-brand-800/40 flex items-center justify-center p-10">
-                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-full">
-                  <p class="text-white/50 text-xs font-medium uppercase tracking-wider mb-4">Live dashboard</p>
+              <div class="lg:w-[380px] bg-gradient-to-br from-brand-100 to-brand-50 flex items-center justify-center p-10">
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 w-full">
+                  <p class="text-gray-500 text-xs font-medium uppercase tracking-wider mb-4">Live dashboard</p>
                   <div class="space-y-3">
                     <div v-for="metric in featured.metrics" :key="metric.label" class="flex items-center justify-between">
-                      <span class="text-white/60 text-sm">{{ metric.label }}</span>
-                      <span class="text-white font-bold text-sm">{{ metric.value }}</span>
+                      <span class="text-gray-600 text-sm">{{ metric.label }}</span>
+                      <span class="text-navy-900 font-bold text-sm">{{ metric.value }}</span>
                     </div>
                   </div>
-                  <div class="mt-5 pt-4 border-t border-white/10">
+                  <div class="mt-5 pt-4 border-t border-gray-100">
                     <div class="flex items-center gap-2">
                       <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                       <span class="text-green-400 text-xs font-semibold">All systems operational</span>
@@ -260,22 +260,22 @@
       </section>
 
       <!-- Delivery timeline -->
-      <section class="py-20 bg-[#060809]">
+      <section class="py-20 bg-white border-y border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
             <p class="section-label text-brand-300">How Teams Launch</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-white">A proven implementation path</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-navy-900">A proven implementation path</h2>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
             <div
               v-for="step in launchPlan"
               :key="step.title"
-              class="rounded-2xl border border-white/10 bg-white/5 p-6"
+              class="rounded-2xl border border-brand-100 bg-brand-50 p-6"
             >
               <p class="text-xs font-bold uppercase tracking-wider text-brand-300 mb-3">{{ step.phase }}</p>
-              <p class="text-lg font-bold text-white mb-2">{{ step.title }}</p>
-              <p class="text-sm text-white/60 leading-relaxed">{{ step.description }}</p>
-              <p class="text-xs text-white/40 mt-4">{{ step.timeline }}</p>
+              <p class="text-lg font-bold text-navy-900 mb-2">{{ step.title }}</p>
+              <p class="text-sm text-gray-600 leading-relaxed">{{ step.description }}</p>
+              <p class="text-xs text-gray-500 mt-4">{{ step.timeline }}</p>
             </div>
           </div>
         </div>

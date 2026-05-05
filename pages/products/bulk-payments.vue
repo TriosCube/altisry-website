@@ -8,7 +8,6 @@
         description="Automate payroll, supplier disbursements, refunds, and treasury transfers with a resilient bulk payment engine built for scale."
         parent-label="Products"
         parent-href="/products"
-        :dark="true"
       >
         <template #cta>
           <NuxtLink to="/get-started" class="btn-primary text-base px-8 py-4">Get API keys</NuxtLink>

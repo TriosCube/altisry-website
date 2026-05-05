@@ -6,7 +6,6 @@
         tag="Contact"
         title="Let's talk open banking"
         description="Our team is ready to help you find the right solution for your business."
-        :dark="true"
       />
       <ContactFormSection />
     </main>

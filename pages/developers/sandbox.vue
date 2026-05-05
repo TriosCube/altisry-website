@@ -8,7 +8,6 @@
         description="Use mock institutions, synthetic account data, and test payment flows before going live."
         parent-label="Developers"
         parent-href="/developers"
-        :dark="true"
       >
         <template #cta>
           <NuxtLink to="/get-started" class="btn-primary text-base px-8 py-4">Create sandbox account</NuxtLink>

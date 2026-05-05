@@ -8,7 +8,6 @@
         description="Full-stack open banking compliance solution for banks and EMIs. We handle the regulatory complexity so you can focus on building great products."
         parent-label="Products"
         parent-href="/products"
-        :dark="true"
       >
         <template #cta>
           <NuxtLink to="/contact" class="btn-primary text-base px-8 py-4">Talk to compliance team</NuxtLink>

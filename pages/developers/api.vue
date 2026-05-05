@@ -8,7 +8,6 @@
         description="Explore endpoints, auth, schemas, and example payloads for all core products."
         parent-label="Developers"
         parent-href="/developers"
-        :dark="true"
       />
 
       <section class="py-20 bg-white">
@@ -23,7 +22,7 @@
             <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Sample Endpoint</p>
             <h2 class="text-lg font-bold text-navy-900 mb-2">POST /v1/bulk-payments</h2>
             <p class="text-sm text-gray-600 mb-4">Create a payout batch and return a tracking identifier.</p>
-            <pre class="bg-[#060809] text-white/90 rounded-xl p-4 text-xs overflow-x-auto"><code>{
+            <pre class="bg-gray-50 border border-gray-200 text-gray-700 rounded-xl p-4 text-xs overflow-x-auto"><code>{
   "batch_id": "pay_batch_001",
   "currency": "EUR",
   "payments": [

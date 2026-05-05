@@ -8,7 +8,6 @@
         description="We are a global team of engineers, compliance experts, and financial technologists on a mission to make open banking accessible to every business."
         parent-label="Company"
         parent-href="/company"
-        :dark="true"
       />
 
       <!-- Mission -->
@@ -39,12 +38,12 @@
       </section>
 
       <!-- Stats -->
-      <section class="py-16 bg-[#060809]">
+      <section class="py-16 bg-brand-50 border-y border-brand-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div v-for="stat in stats" :key="stat.value">
-              <p class="text-4xl md:text-5xl font-bold text-white mb-2">{{ stat.value }}</p>
-              <p class="text-white/50 text-sm">{{ stat.label }}</p>
+              <p class="text-4xl md:text-5xl font-bold text-navy-900 mb-2">{{ stat.value }}</p>
+              <p class="text-gray-600 text-sm">{{ stat.label }}</p>
             </div>
           </div>
         </div>

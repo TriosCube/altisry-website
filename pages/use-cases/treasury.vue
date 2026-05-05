@@ -8,7 +8,6 @@
         description="Transform your treasury strategy with unified access to account data from over 5,000 financial institutions worldwide — across multiple banks and regions."
         parent-label="Use Cases"
         parent-href="/use-cases"
-        :dark="true"
       >
         <template #cta>
           <NuxtLink to="/contact" class="btn-primary text-base px-8 py-4">Talk to us</NuxtLink>

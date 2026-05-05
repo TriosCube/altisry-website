@@ -8,7 +8,6 @@
         description="Unlock new revenue streams, reduce costs, and deliver a better customer experience through the power of open banking."
         parent-label="Use Cases"
         parent-href="/use-cases"
-        :dark="true"
       >
         <template #cta>
           <NuxtLink to="/contact" class="btn-primary text-base px-8 py-4">Talk to us</NuxtLink>

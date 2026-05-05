@@ -6,7 +6,6 @@
         tag="Developers"
         title="For developers with love"
         description="Clear documentation, a full sandbox environment, and SDKs in every major language. Integrate Altisry in hours, not weeks."
-        :dark="true"
       >
         <template #cta>
           <NuxtLink to="/get-started" class="btn-primary text-base px-8 py-4">Get API keys</NuxtLink>
@@ -40,15 +39,15 @@
                 </button>
               </div>
             </div>
-            <div class="flex-1 bg-[#060809] rounded-2xl overflow-hidden">
-              <div class="flex items-center gap-2 px-5 py-3 border-b border-white/10">
+            <div class="flex-1 bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden">
+              <div class="flex items-center gap-2 px-5 py-3 border-b border-gray-200">
                 <div class="w-3 h-3 rounded-full bg-red-500"></div>
                 <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                <span class="text-white/40 text-xs ml-3">{{ codeExamples[selectedLang]?.filename }}</span>
+                <span class="text-gray-500 text-xs ml-3">{{ codeExamples[selectedLang]?.filename }}</span>
               </div>
               <div class="p-6 font-mono text-sm overflow-x-auto">
-                <pre class="text-white/80 leading-relaxed whitespace-pre-wrap">{{ codeExamples[selectedLang]?.code }}</pre>
+                <pre class="text-gray-700 leading-relaxed whitespace-pre-wrap">{{ codeExamples[selectedLang]?.code }}</pre>
               </div>
             </div>
           </div>

@@ -8,7 +8,6 @@
         description="We're a team of curious, ambitious people who love building great technology. Come join us."
         parent-label="Company"
         parent-href="/company"
-        :dark="true"
       />
 
       <!-- Why work here -->

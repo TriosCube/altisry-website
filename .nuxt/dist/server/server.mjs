@@ -403,12 +403,12 @@ const _routes = [
   {
     name: "blog",
     path: "/blog",
-    component: () => import("./_nuxt/blog-4BR8CNLs.js"),
+    component: () => import("./_nuxt/blog-Ba5_Rbc5.js"),
     children: [
       {
         name: "blog-slug",
         path: ":slug()",
-        component: () => import("./_nuxt/_slug_-ByzmgFnM.js")
+        component: () => import("./_nuxt/_slug_-DnRi1xJp.js")
       }
     ]
   },
@@ -420,12 +420,12 @@ const _routes = [
   {
     name: "status",
     path: "/status",
-    component: () => import("./_nuxt/status-BhehBlmR.js")
+    component: () => import("./_nuxt/status-DaUwPsdI.js")
   },
   {
     name: "contact",
     path: "/contact",
-    component: () => import("./_nuxt/contact-CLPALvdH.js")
+    component: () => import("./_nuxt/contact-BiWdgS3v.js")
   },
   {
     name: "get-started",
@@ -435,42 +435,42 @@ const _routes = [
   {
     name: "products-aml",
     path: "/products/aml",
-    component: () => import("./_nuxt/aml-DzEBHVnq.js")
+    component: () => import("./_nuxt/aml-C7CWXX0Q.js")
   },
   {
     name: "company-about",
     path: "/company/about",
-    component: () => import("./_nuxt/about-C6TQ_l-T.js")
+    component: () => import("./_nuxt/about-B4DMjfIf.js")
   },
   {
     name: "developers-api",
     path: "/developers/api",
-    component: () => import("./_nuxt/api-DwiX2c9o.js")
+    component: () => import("./_nuxt/api-BfevS4uF.js")
   },
   {
     name: "company-careers",
     path: "/company/careers",
-    component: () => import("./_nuxt/careers-CsoeUTw7.js")
+    component: () => import("./_nuxt/careers-BRnVYk8W.js")
   },
   {
     name: "developers-docs",
     path: "/developers/docs",
-    component: () => import("./_nuxt/docs-Bw8b0gZW.js")
+    component: () => import("./_nuxt/docs-DpyewM1d.js")
   },
   {
     name: "company-security",
     path: "/company/security",
-    component: () => import("./_nuxt/security-CBGjh88q.js")
+    component: () => import("./_nuxt/security-CaZqbKd8.js")
   },
   {
     name: "developers",
     path: "/developers",
-    component: () => import("./_nuxt/index-BG1iKz-B.js")
+    component: () => import("./_nuxt/index-D3ur_Rab.js")
   },
   {
     name: "use-cases-banking",
     path: "/use-cases/banking",
-    component: () => import("./_nuxt/banking-Bc4hRFNu.js")
+    component: () => import("./_nuxt/banking-C1qoRlnK.js")
   },
   {
     name: "use-cases-lending",
@@ -480,22 +480,22 @@ const _routes = [
   {
     name: "developers-sandbox",
     path: "/developers/sandbox",
-    component: () => import("./_nuxt/sandbox-D9PVXvpX.js")
+    component: () => import("./_nuxt/sandbox-zI_uE9Do.js")
   },
   {
     name: "use-cases-treasury",
     path: "/use-cases/treasury",
-    component: () => import("./_nuxt/treasury-CdbLQPhb.js")
+    component: () => import("./_nuxt/treasury-C-zZyGI9.js")
   },
   {
     name: "products-compliance",
     path: "/products/compliance",
-    component: () => import("./_nuxt/compliance-B4CafSMH.js")
+    component: () => import("./_nuxt/compliance-B2fNQQyX.js")
   },
   {
     name: "products-mobile-sca",
     path: "/products/mobile-sca",
-    component: () => import("./_nuxt/mobile-sca-CsnSqVB4.js")
+    component: () => import("./_nuxt/mobile-sca-BJhZIuJ1.js")
   },
   {
     name: "use-cases-ecommerce",
@@ -520,17 +520,17 @@ const _routes = [
   {
     name: "products-bulk-payments",
     path: "/products/bulk-payments",
-    component: () => import("./_nuxt/bulk-payments-C5nMYDVu.js")
+    component: () => import("./_nuxt/bulk-payments-Dp05PfEZ.js")
   },
   {
     name: "company-success-stories",
     path: "/company/success-stories",
-    component: () => import("./_nuxt/success-stories-CvW1K8yb.js"),
+    component: () => import("./_nuxt/success-stories-CBQsc-ST.js"),
     children: [
       {
         name: "company-success-stories-slug",
         path: ":slug()",
-        component: () => import("./_nuxt/_slug_-B7y0XRH5.js")
+        component: () => import("./_nuxt/_slug_-Dm1qo8Bs.js")
       }
     ]
   },
@@ -542,7 +542,7 @@ const _routes = [
   {
     name: "products-data-aggregation",
     path: "/products/data-aggregation",
-    component: () => import("./_nuxt/data-aggregation-CKIn64j7.js")
+    component: () => import("./_nuxt/data-aggregation-CsrExiwj.js")
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;

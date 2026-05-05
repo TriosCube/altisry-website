@@ -8,7 +8,6 @@
         description="PSD2-compliant Strong Customer Authentication for mobile apps. Deliver a seamless, secure authentication experience that meets regulatory requirements without sacrificing UX."
         parent-label="Products"
         parent-href="/products"
-        :dark="true"
       >
         <template #cta>
           <NuxtLink to="/get-started" class="btn-primary text-base px-8 py-4">Get API keys</NuxtLink>

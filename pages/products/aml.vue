@@ -8,7 +8,6 @@
         description="Keep your platform safe and compliant with AI-powered transaction monitoring. Detect suspicious activity, meet regulatory requirements, and reduce compliance costs."
         parent-label="Products"
         parent-href="/products"
-        :dark="true"
       >
         <template #cta>
           <NuxtLink to="/contact" class="btn-primary text-base px-8 py-4">Talk to our AML team</NuxtLink>

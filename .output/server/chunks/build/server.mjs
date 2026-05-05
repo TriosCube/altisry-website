@@ -413,12 +413,12 @@ const _routes = [
   {
     name: "blog",
     path: "/blog",
-    component: () => import('./blog-4BR8CNLs.mjs'),
+    component: () => import('./blog-Ba5_Rbc5.mjs'),
     children: [
       {
         name: "blog-slug",
         path: ":slug()",
-        component: () => import('./_slug_-ByzmgFnM.mjs')
+        component: () => import('./_slug_-DnRi1xJp.mjs')
       }
     ]
   },
@@ -430,12 +430,12 @@ const _routes = [
   {
     name: "status",
     path: "/status",
-    component: () => import('./status-BhehBlmR.mjs')
+    component: () => import('./status-DaUwPsdI.mjs')
   },
   {
     name: "contact",
     path: "/contact",
-    component: () => import('./contact-CLPALvdH.mjs')
+    component: () => import('./contact-BiWdgS3v.mjs')
   },
   {
     name: "get-started",
@@ -445,42 +445,42 @@ const _routes = [
   {
     name: "products-aml",
     path: "/products/aml",
-    component: () => import('./aml-DzEBHVnq.mjs')
+    component: () => import('./aml-C7CWXX0Q.mjs')
   },
   {
     name: "company-about",
     path: "/company/about",
-    component: () => import('./about-C6TQ_l-T.mjs')
+    component: () => import('./about-B4DMjfIf.mjs')
   },
   {
     name: "developers-api",
     path: "/developers/api",
-    component: () => import('./api-DwiX2c9o.mjs')
+    component: () => import('./api-BfevS4uF.mjs')
   },
   {
     name: "company-careers",
     path: "/company/careers",
-    component: () => import('./careers-CsoeUTw7.mjs')
+    component: () => import('./careers-BRnVYk8W.mjs')
   },
   {
     name: "developers-docs",
     path: "/developers/docs",
-    component: () => import('./docs-Bw8b0gZW.mjs')
+    component: () => import('./docs-DpyewM1d.mjs')
   },
   {
     name: "company-security",
     path: "/company/security",
-    component: () => import('./security-CBGjh88q.mjs')
+    component: () => import('./security-CaZqbKd8.mjs')
   },
   {
     name: "developers",
     path: "/developers",
-    component: () => import('./index-BG1iKz-B.mjs')
+    component: () => import('./index-D3ur_Rab.mjs')
   },
   {
     name: "use-cases-banking",
     path: "/use-cases/banking",
-    component: () => import('./banking-Bc4hRFNu.mjs')
+    component: () => import('./banking-C1qoRlnK.mjs')
   },
   {
     name: "use-cases-lending",
@@ -490,22 +490,22 @@ const _routes = [
   {
     name: "developers-sandbox",
     path: "/developers/sandbox",
-    component: () => import('./sandbox-D9PVXvpX.mjs')
+    component: () => import('./sandbox-zI_uE9Do.mjs')
   },
   {
     name: "use-cases-treasury",
     path: "/use-cases/treasury",
-    component: () => import('./treasury-CdbLQPhb.mjs')
+    component: () => import('./treasury-C-zZyGI9.mjs')
   },
   {
     name: "products-compliance",
     path: "/products/compliance",
-    component: () => import('./compliance-B4CafSMH.mjs')
+    component: () => import('./compliance-B2fNQQyX.mjs')
   },
   {
     name: "products-mobile-sca",
     path: "/products/mobile-sca",
-    component: () => import('./mobile-sca-CsnSqVB4.mjs')
+    component: () => import('./mobile-sca-BJhZIuJ1.mjs')
   },
   {
     name: "use-cases-ecommerce",
@@ -530,17 +530,17 @@ const _routes = [
   {
     name: "products-bulk-payments",
     path: "/products/bulk-payments",
-    component: () => import('./bulk-payments-C5nMYDVu.mjs')
+    component: () => import('./bulk-payments-Dp05PfEZ.mjs')
   },
   {
     name: "company-success-stories",
     path: "/company/success-stories",
-    component: () => import('./success-stories-CvW1K8yb.mjs'),
+    component: () => import('./success-stories-CBQsc-ST.mjs'),
     children: [
       {
         name: "company-success-stories-slug",
         path: ":slug()",
-        component: () => import('./_slug_-B7y0XRH5.mjs')
+        component: () => import('./_slug_-Dm1qo8Bs.mjs')
       }
     ]
   },
@@ -552,7 +552,7 @@ const _routes = [
   {
     name: "products-data-aggregation",
     path: "/products/data-aggregation",
-    component: () => import('./data-aggregation-CKIn64j7.mjs')
+    component: () => import('./data-aggregation-CsrExiwj.mjs')
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
