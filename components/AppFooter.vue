@@ -1,0 +1,171 @@
+<template>
+  <footer class="bg-navy-950 text-white">
+    <!-- Newsletter strip -->
+    <div class="border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div>
+            <h3 class="text-lg font-bold mb-1">Be the first to get Altisry updates</h3>
+            <p class="text-white/50 text-sm">
+              Get expert insights, product updates, and industry trends — straight to your inbox.
+            </p>
+          </div>
+          <form @submit.prevent="subscribeNewsletter" class="flex gap-2 w-full sm:w-auto">
+            <input
+              v-model="email"
+              type="email"
+              placeholder="your@company.com"
+              required
+              class="flex-1 sm:w-64 px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition"
+            />
+            <button type="submit" class="btn-primary whitespace-nowrap text-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main footer -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-16">
+        <!-- Brand column -->
+        <div class="col-span-2 md:col-span-3 lg:col-span-1">
+          <NuxtLink to="/" class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
+              <span class="text-white font-black text-sm">A</span>
+            </div>
+            <span class="text-white font-bold text-xl tracking-tight">altisry</span>
+            <span class="text-brand-400 font-light text-sm">.co</span>
+          </NuxtLink>
+          <p class="text-white/50 text-sm leading-relaxed mb-6">
+            Global open banking and open finance platform powering tomorrow's financial services.
+          </p>
+          <div class="flex items-center gap-3">
+            <a
+              v-for="social in socials"
+              :key="social.label"
+              :href="social.href"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-8 h-8 rounded-lg bg-white/10 hover:bg-brand-600 flex items-center justify-center transition-colors"
+              :aria-label="social.label"
+            >
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path :d="social.icon" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Nav columns -->
+        <div v-for="col in footerNav" :key="col.title">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">{{ col.title }}</h4>
+          <ul class="space-y-2.5">
+            <li v-for="link in col.links" :key="link.label">
+              <NuxtLink
+                :to="link.href"
+                class="text-sm text-white/50 hover:text-white transition-colors leading-relaxed"
+              >
+                {{ link.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-white/10 pt-8">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <p class="text-white/40 text-xs">© 2026, Altisry Inc. All rights reserved.</p>
+          <div class="flex items-center flex-wrap gap-4">
+            <NuxtLink
+              v-for="link in legalLinks"
+              :key="link.label"
+              :to="link.href"
+              class="text-xs text-white/40 hover:text-white/70 transition-colors"
+            >
+              {{ link.label }}
+            </NuxtLink>
+          </div>
+        </div>
+        <p class="text-white/25 text-xs mt-4 leading-relaxed max-w-3xl">
+          Altisry Limited, registered in England and Wales, is authorized by the FCA. All logos, trademarks, and brand
+          names used on this website that are not owned by Altisry Inc. are the property of their respective owners and
+          are used for identification purposes only.
+        </p>
+      </div>
+    </div>
+  </footer>
+</template>
+
+<script setup lang="ts">
+const email = ref('')
+
+function subscribeNewsletter() {
+  email.value = ''
+}
+
+const socials = [
+  {
+    label: 'LinkedIn',
+    href: '#',
+    icon: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z',
+  },
+  {
+    label: 'Twitter / X',
+    href: '#',
+    icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.713 5.842zm-1.161 17.52h1.833L7.084 4.126H5.117z',
+  },
+]
+
+const footerNav = [
+  {
+    title: 'Products',
+    links: [
+      { label: 'Data Aggregation', href: '/products/data-aggregation' },
+      { label: 'Pay by Bank', href: '/products/pay-by-bank' },
+      { label: 'Bulk Payments', href: '/products/bulk-payments' },
+      { label: 'Data Enrichment', href: '/products/data-enrichment' },
+      { label: 'Compliance', href: '/products/compliance' },
+      { label: 'Mobile SCA', href: '/products/mobile-sca' },
+      { label: 'AML Monitoring', href: '/products/aml' },
+    ],
+  },
+  {
+    title: 'Use Cases',
+    links: [
+      { label: 'Lending', href: '/use-cases/lending' },
+      { label: 'Banking', href: '/use-cases/banking' },
+      { label: 'E-commerce', href: '/use-cases/ecommerce' },
+      { label: 'Treasury', href: '/use-cases/treasury' },
+      { label: 'Automotive', href: '/use-cases/automotive' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'About us', href: '/company/about' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Security', href: '/company/security' },
+      { label: 'Partnerships', href: '/company/partnerships' },
+      { label: 'Careers', href: '/company/careers' },
+      { label: 'Service Status', href: '/status' },
+    ],
+  },
+  {
+    title: 'Developers',
+    links: [
+      { label: 'Documentation', href: '/developers/docs' },
+      { label: 'API Reference', href: '/developers/api' },
+      { label: 'Sandbox', href: '/developers/sandbox' },
+      { label: 'Get API Keys', href: '/get-started' },
+    ],
+  },
+]
+
+const legalLinks = [
+  { label: 'Terms of Service', href: '/legal/terms' },
+  { label: 'Privacy Policy', href: '/legal/privacy' },
+  { label: 'Legal Notice', href: '/legal/notice' },
+  { label: 'Site Map', href: '/sitemap' },
+]
+</script>

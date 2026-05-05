@@ -1,0 +1,104 @@
+<template>
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <p class="section-label">Why Altisry</p>
+        <h2 class="section-title mb-5">Why they chose us</h2>
+        <p class="section-subtitle mx-auto text-center">
+          We are committed to delivering top-tier performance and solutions tailored to businesses' unique needs. Our
+          dedication to excellence has made us a trusted partner in each client's open banking journey.
+        </p>
+      </div>
+
+      <!-- 6 reasons title -->
+      <div class="bg-navy-900 rounded-3xl p-10 md:p-14">
+        <div class="text-center mb-12">
+          <h3 class="text-2xl md:text-3xl font-bold text-white">
+            Six reasons why top businesses choose
+            <span class="text-brand-400">Altisry</span>
+          </h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            v-for="reason in reasons"
+            :key="reason.title"
+            class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group"
+          >
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform"
+              :class="reason.iconBg"
+            >
+              <svg class="w-6 h-6" :class="reason.iconColor" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="reason.icon" />
+              </svg>
+            </div>
+            <h4 class="text-base font-bold text-white mb-2">{{ reason.title }}</h4>
+            <p class="text-sm font-semibold text-brand-400 mb-3">{{ reason.subtitle }}</p>
+            <p class="text-sm text-white/60 leading-relaxed">{{ reason.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+const reasons = [
+  {
+    title: 'Expertise',
+    subtitle: 'Putting our decade-long expertise to work for you',
+    description:
+      'For more than 10 years, our team of seasoned open banking professionals has been committed to sharing their knowledge and expertise to help you find the ideal solution for your needs.',
+    icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
+    iconBg: 'bg-yellow-500/20',
+    iconColor: 'text-yellow-400',
+  },
+  {
+    title: 'Global Connectivity',
+    subtitle: 'Unlock global connectivity',
+    description:
+      'Expand your business horizons effortlessly with access to real-time account data from over 5,000 financial institutions spanning across 50+ countries.',
+    icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+    iconBg: 'bg-blue-500/20',
+    iconColor: 'text-blue-400',
+  },
+  {
+    title: 'One-Stop Platform',
+    subtitle: 'A one-stop shop open banking platform',
+    description:
+      'Altisry is here to help any business thrive with innovative solutions tailored to their specific needs. Whether you\'re a bank, payment gateway, airline, or e-commerce, we\'ve got you covered!',
+    icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
+    iconBg: 'bg-purple-500/20',
+    iconColor: 'text-purple-400',
+  },
+  {
+    title: 'No Licence Required',
+    subtitle: 'No licence? No worries!',
+    description:
+      'Explore countless possibilities and innovate without acquiring your own open banking licence or certificates. Instead, use ours.',
+    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    iconBg: 'bg-green-500/20',
+    iconColor: 'text-green-400',
+  },
+  {
+    title: 'Developer-Friendly',
+    subtitle: 'For developers with love',
+    description:
+      'With clear documentation and a full testing environment, our SaaS solutions are fast and easy to integrate!',
+    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+    iconBg: 'bg-pink-500/20',
+    iconColor: 'text-pink-400',
+  },
+  {
+    title: 'High Security',
+    subtitle: 'Guarantee of high-security',
+    description:
+      'We are ISO 27001-certified and PSD2-licensed, employing the highest international security standards to safely access financial data and initiate payments.',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+    iconBg: 'bg-brand-400/20',
+    iconColor: 'text-brand-400',
+  },
+]
+</script>
