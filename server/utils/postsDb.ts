@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs'
 import { join } from 'path'
+import seedPosts from '~/data/posts.json'
 
 export type BlogPost = {
   id: string
@@ -18,6 +19,7 @@ export type BlogPost = {
 
 const DATA_DIR = join(process.cwd(), 'data')
 const POSTS_FILE = join(DATA_DIR, 'posts.json')
+const FALLBACK_POSTS = seedPosts as BlogPost[]
 
 const ensureFile = () => {
   if (!existsSync(DATA_DIR)) mkdirSync(DATA_DIR, { recursive: true })
@@ -25,8 +27,15 @@ const ensureFile = () => {
 }
 
 export const getAllPosts = (): BlogPost[] => {
-  ensureFile()
-  return JSON.parse(readFileSync(POSTS_FILE, 'utf-8')) as BlogPost[]
+  try {
+    ensureFile()
+    return JSON.parse(readFileSync(POSTS_FILE, 'utf-8')) as BlogPost[]
+  }
+  catch {
+    // In serverless builds, filesystem paths can be unavailable/read-only.
+    // Fall back to bundled seed data so public blog endpoints remain readable.
+    return FALLBACK_POSTS
+  }
 }
 
 export const getPublishedPosts = (): BlogPost[] =>
