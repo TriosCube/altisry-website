@@ -205,6 +205,86 @@
         </div>
       </section>
 
+      <!-- Altis AI chat -->
+      <section class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-10">
+            <p class="section-label text-[#15c411] font-semibold tracking-wider text-sm mb-2 uppercase">Altis AI Chat</p>
+            <h2 class="section-title text-3xl font-bold text-navy-900 mb-4">Ask crazy questions. Get useful answers.</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Ask about kits, coaching, drones, pricing, school partnerships, or paste a long messy idea and Altis AI will break it down.
+            </p>
+          </div>
+
+          <div class="rounded-3xl border border-gray-200 shadow-sm overflow-hidden">
+            <div class="bg-[#0b1220] px-5 py-3 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#15c411] animate-pulse" />
+                <p class="text-white text-sm font-semibold">Altis AI Assistant</p>
+              </div>
+              <p class="text-[11px] text-white/60">Live demo</p>
+            </div>
+
+            <div class="p-5 md:p-6 bg-gradient-to-b from-gray-50 to-white">
+              <div class="max-h-[420px] overflow-y-auto space-y-4 pr-1">
+                <div
+                  v-for="message in chatMessages"
+                  :key="message.id"
+                  class="flex"
+                  :class="message.role === 'user' ? 'justify-end' : 'justify-start'"
+                >
+                  <div
+                    class="max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm"
+                    :class="message.role === 'user'
+                      ? 'bg-brand-600 text-white rounded-br-md'
+                      : 'bg-white border border-gray-200 text-gray-700 rounded-bl-md'"
+                  >
+                    <template v-if="message.text">
+                      <p class="whitespace-pre-line">{{ message.text }}</p>
+                    </template>
+                    <template v-else-if="message.role === 'assistant' && message.isStreaming">
+                      <div class="flex items-center gap-1 py-1">
+                        <span class="w-2 h-2 rounded-full bg-gray-400 animate-bounce" />
+                        <span class="w-2 h-2 rounded-full bg-gray-400 animate-bounce [animation-delay:120ms]" />
+                        <span class="w-2 h-2 rounded-full bg-gray-400 animate-bounce [animation-delay:240ms]" />
+                      </div>
+                    </template>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-5 flex flex-wrap gap-2">
+                <button
+                  v-for="prompt in quickPrompts"
+                  :key="prompt"
+                  type="button"
+                  class="px-3 py-1.5 text-xs font-semibold rounded-full border border-gray-200 text-gray-600 hover:border-[#15c411] hover:text-[#15c411] transition-colors"
+                  @click="questionInput = prompt"
+                >
+                  {{ prompt }}
+                </button>
+              </div>
+
+              <form class="mt-4 flex flex-col sm:flex-row gap-3" @submit.prevent="askAltisAi">
+                <input
+                  v-model="questionInput"
+                  type="text"
+                  class="flex-1 rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#15c411]/30 focus:border-[#15c411]"
+                  placeholder="Ask something wild, e.g. can I combine drone labs, robotics and design for a 12-week school cohort?"
+                >
+                <button
+                  type="submit"
+                  class="btn-primary px-6 py-3 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                  :disabled="isTyping || !questionInput.trim()"
+                >
+                  {{ isTyping ? 'Thinking...' : 'Ask Altis AI' }}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CtaBanner
         title="Ready to transform how your students learn?"
         subtitle="Get our hardware kits and expert coaching platform to inspire the next generation of engineers and creators."
@@ -341,4 +421,107 @@ const audiences = [
     points: ['Ready-to-deploy hardware modules', 'Exciting drone and robotics showcases', 'Train-the-trainer support', 'Memorable physical takeaways for kids'],
   },
 ]
+
+type ChatMessage = {
+  id: string
+  role: 'user' | 'assistant'
+  text: string
+  isStreaming?: boolean
+}
+
+const quickPrompts = [
+  'Can my school run a drone + electronics club in one term?',
+  'How do starter kits work for parents?',
+  'What does a 12-week coaching track look like?',
+]
+
+const chatMessages = ref<ChatMessage[]>([
+  {
+    id: 'assistant-welcome',
+    role: 'assistant',
+    text: 'Hi, I am Altis AI. Ask me anything about STEM kits, electronics, drones, 3D design, and coaching pathways.',
+  },
+])
+
+const questionInput = ref('')
+const isTyping = ref(false)
+let typingInterval: ReturnType<typeof setInterval> | null = null
+
+const normalizeText = (value: string) => value.toLowerCase()
+
+const buildReply = (question: string) => {
+  const text = normalizeText(question)
+  const isHugeInput = question.length > 320 || text.split(/\s+/).length > 55
+
+  if (isHugeInput) {
+    return [
+      'That is a powerful mega-question. Here is the clean breakdown:',
+      '1. Goal: move students from passive screen learning to real-world engineering.',
+      '2. Method: deliver physical kits, pair with live coaching, track progress in cohorts.',
+      '3. Tracks: STEM science, electronics, drone manipulation, graphics and design.',
+      '4. Outcomes: students build, test, fail safely, improve, and ship real projects.',
+      'If you want, I can turn your exact idea into a 6-week or 12-week rollout plan next.',
+    ].join('\n')
+  }
+
+  if (text.includes('drone')) {
+    return 'Great choice. The drone track teaches assembly, calibration, motor control, and flight testing. Best paired with electronics so students understand both hardware and control logic.'
+  }
+
+  if (text.includes('school') || text.includes('classroom')) {
+    return 'Yes. We support school partnerships with bulk kits, coach-led sessions, and curriculum support. A common setup is 1 weekly live session plus guided build tasks between sessions.'
+  }
+
+  if (text.includes('parent') || text.includes('starter kit')) {
+    return 'For parents, we recommend the starter kit path: hardware delivered home, structured weekly projects, and 1-on-1 mentor guidance so progress is visible and safe.'
+  }
+
+  if (text.includes('price') || text.includes('cost')) {
+    return 'Pricing depends on track, kit type, and coaching format (1-on-1 vs cohort). The fastest path is to share student count and preferred track, then we return a custom quote.'
+  }
+
+  return 'Strong question. Altis Learn combines physical kits with expert coaching so students build real things, not just watch tutorials. Tell me your learner age range and I can suggest the best track.'
+}
+
+const askAltisAi = async () => {
+  const question = questionInput.value.trim()
+  if (!question || isTyping.value) return
+
+  const userMessage: ChatMessage = {
+    id: `user-${Date.now()}`,
+    role: 'user',
+    text: question,
+  }
+  chatMessages.value.push(userMessage)
+  questionInput.value = ''
+
+  const reply = buildReply(question)
+  const assistantMessage: ChatMessage = {
+    id: `assistant-${Date.now()}`,
+    role: 'assistant',
+    text: '',
+    isStreaming: true,
+  }
+  chatMessages.value.push(assistantMessage)
+
+  isTyping.value = true
+  let pointer = 0
+  typingInterval = setInterval(() => {
+    pointer += 1
+    assistantMessage.text = reply.slice(0, pointer)
+
+    if (pointer >= reply.length) {
+      assistantMessage.isStreaming = false
+      isTyping.value = false
+      if (typingInterval) {
+        clearInterval(typingInterval)
+        typingInterval = null
+      }
+    }
+  }, 14)
+}
+
+onBeforeUnmount(() => {
+  if (typingInterval) clearInterval(typingInterval)
+})
 </script>
